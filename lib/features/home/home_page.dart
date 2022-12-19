@@ -13,23 +13,50 @@ class HomeView extends StatelessWidget with BaseExtension {
     return Scaffold(
       appBar: const CustomAppBar(),
       body: SingleChildScrollView(
-        child: Stack(
+        child: Column(
           children: [
-            Ink(
-              height: getMaxHeight(context),
-              color: CColor.backgroundColorBright,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                ProfilePhotoWidget(),
-                HeroMainText(),
-                HeroParagraphText(),
-                CustomButton(
-                  text: 'Download Resume',
+            Stack(
+              children: [
+                Ink(
+                  height: getMaxHeight(context),
+                  color: CColor.backgroundColorBright,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    ProfilePhotoWidget(),
+                    HeroMainText(),
+                    HeroParagraphText(),
+                    CustomButton(
+                      text: 'Download Resume',
+                    ),
+                  ],
                 ),
               ],
+            ),
+            Container(
+              padding: const EdgeInsets.only(bottom: 50),
+              color: CColor.backgroundColorDifferent,
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 21.0),
+                      child: Text(
+                        'Recent posts',
+                        style: getTextTheme(context).titleSmall,
+                      ),
+                    ),
+                    const BlogBox(),
+                    const SizedBox(
+                      height: 17,
+                    ),
+                    const BlogBox(),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
