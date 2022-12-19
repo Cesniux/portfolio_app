@@ -41,23 +41,36 @@ class HomeView extends StatelessWidget with BaseExtension {
               child: SizedBox(
                 width: double.infinity,
                 child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 21.0),
-                      child: Text(
-                        'Recent posts',
-                        style: getTextTheme(context).titleSmall,
-                      ),
+                  children: const [
+                    CustomSmallTitleText(
+                      text: 'Recent posts',
                     ),
-                    const BlogBox(),
-                    const SizedBox(
+                    BlogBox(),
+                    SizedBox(
                       height: 17,
                     ),
-                    const BlogBox(),
+                    BlogBox(),
                   ],
                 ),
               ),
             ),
+            Container(
+              color: CColor.backgroundColorBright,
+              padding: const EdgeInsets.symmetric(horizontal: 18),
+              child: Column(
+                children: const [
+                  CustomSmallTitleText(
+                    text: 'Featured works',
+                    bottomPadding: 5,
+                  ),
+                  WorkBoxWidget(),
+                  SizedBox(
+                    height: 130,
+                  ),
+                  SocialMediaCopyrightBox(),
+                ],
+              ),
+            )
           ],
         ),
       ),

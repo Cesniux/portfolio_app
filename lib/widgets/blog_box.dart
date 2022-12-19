@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/style/res/constants.dart';
+import 'package:portfolio_app/widgets/widgets.dart';
 
 class BlogBox extends StatelessWidget with BaseExtension {
   const BlogBox({
@@ -46,13 +47,9 @@ class BlogBox extends StatelessWidget with BaseExtension {
                 ),
               ),
             ),
-            SizedBox(
-              width: double.infinity,
-              child: Text(
-                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-                textAlign: TextAlign.left,
-                style: getTextTheme(context).bodyMedium,
-              ),
+            const ShortParagraphText(
+              text:
+                  'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
             ),
           ],
         ),
