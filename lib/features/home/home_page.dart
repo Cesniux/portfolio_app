@@ -4,6 +4,7 @@ import 'package:portfolio_app/base_extension.dart';
 import '../../widgets/widgets.dart';
 import 'widgets/home_page_widgets.dart';
 
+
 class HomeView extends StatelessWidget with BaseExtension {
   const HomeView({super.key});
 
@@ -14,9 +15,9 @@ class HomeView extends StatelessWidget with BaseExtension {
       body: SingleChildScrollView(
         child: Column(
           children: const [
-            HeroMainWidget(),
-            RecentPostsWidget(),
-            FeaturedWorksWidget(),
+            HeroView(),
+            RecentPosts(),
+            FeaturedWorks(),
             SocialMediaCopyrightBox(),
           ],
         ),

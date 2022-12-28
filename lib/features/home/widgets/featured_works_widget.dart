@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
-class FeaturedWorksWidget extends StatelessWidget {
-  const FeaturedWorksWidget({
+class FeaturedWorks extends StatelessWidget {
+  const FeaturedWorks({
     Key? key,
   }) : super(key: key);
 

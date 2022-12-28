@@ -2,7 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 
 class HeroMainText extends StatelessWidget with BaseExtension {
-  const HeroMainText({
+  final double fontSize;
+
+  const HeroMainText.mobile({
+    this.fontSize = 32,
+    Key? key,
+  }) : super(key: key);
+
+  const HeroMainText.tablet({
+    this.fontSize = 38,
+    Key? key,
+  }) : super(key: key);
+  const HeroMainText.desktop({
+    this.fontSize = 46,
     Key? key,
   }) : super(key: key);
 
@@ -13,7 +25,8 @@ class HeroMainText extends StatelessWidget with BaseExtension {
       child: Text(
         'Hi, I am Domantas, Creative Technologist',
         textAlign: TextAlign.center,
-        style: getTextTheme(context).headlineLarge,
+        style:
+            getTextTheme(context).headlineLarge!.copyWith(fontSize: fontSize),
       ),
     );
   }

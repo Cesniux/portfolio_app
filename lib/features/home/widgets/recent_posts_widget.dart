@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
-class RecentPostsWidget extends StatelessWidget {
-  const RecentPostsWidget({
+class RecentPosts extends StatelessWidget {
+  const RecentPosts({
     Key? key,
   }) : super(key: key);
 

@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 
-class ProfilePhotoWidget extends StatelessWidget {
-  const ProfilePhotoWidget({
+class ProfilePhoto extends StatelessWidget {
+  const ProfilePhoto({
     Key? key,
   }) : super(key: key);
 
