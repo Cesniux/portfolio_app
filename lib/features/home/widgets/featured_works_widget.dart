@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/style/res/constants.dart';
+import 'package:portfolio_app/utils/screen_sizes.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class FeaturedWorks extends StatelessWidget {
@@ -9,21 +10,66 @@ class FeaturedWorks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: CColor.backgroundColorBright,
-      padding: const EdgeInsets.symmetric(horizontal: 18),
-      child: Column(
-        children: const [
-          CustomSmallTitleText(
-            text: 'Featured works',
-            bottomPadding: 5,
-          ),
-          WorkBoxWidget(),
-          SizedBox(
-            height: 130,
-          ),
-        ],
-      ),
+    return LayoutBuilder(
+      builder: (context, constrains) {
+        final screenType = getScreenType(constrains.maxWidth);
+
+        switch (screenType) {
+          case ScreenType.mobile:
+            return Container(
+              color: CColor.white,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                children: const [
+                  CustomSmallTitleText(
+                    text: 'Featured works',
+                    bottomPadding: 5,
+                  ),
+                  WorkBoxWidget.mobile(),
+                  SizedBox(
+                    height: 130,
+                  ),
+                ],
+              ),
+            );
+          case ScreenType.tablet:
+            return Container(
+              color: CColor.white,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                children: const [
+                  CustomSmallTitleText(
+                    text: 'Featured works',
+                    bottomPadding: 5,
+                  ),
+                  WorkBoxWidget.tablet(),
+                  SizedBox(
+                    height: 130,
+                  ),
+                ],
+              ),
+            );
+          case ScreenType.desktop:
+            return Container(
+              color: CColor.white,
+              padding: const EdgeInsets.symmetric(horizontal: 148),
+              child: Column(
+                children: const [
+                  CustomSmallTitleText(
+                    text: 'Featured works',
+                    bottomPadding: 5,
+                  ),
+                  WorkBoxWidget.desktop(
+                    isDesktop: true,
+                  ),
+                  SizedBox(
+                    height: 130,
+                  ),
+                ],
+              ),
+            );
+        }
+      },
     );
   }
 }

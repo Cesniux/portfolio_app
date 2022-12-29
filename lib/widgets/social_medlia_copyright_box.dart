@@ -14,7 +14,7 @@ class SocialMediaCopyrightBox extends StatelessWidget with BaseExtension {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Material(
-            color: CColor.backgroundColorBright,
+            color: CColor.white,
             child: SizedBox(
               width: 310,
               height: 70,

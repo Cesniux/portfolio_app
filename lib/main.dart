@@ -20,7 +20,7 @@ class App extends StatelessWidget {
         fontFamily: 'Heebo',
         textTheme: textTheme,
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: CColor.backgroundColorBright,
+        scaffoldBackgroundColor: CColor.white,
       ),
       home: const HomeView(),
     );

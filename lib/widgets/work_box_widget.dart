@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/features/home/widgets/home_page_widgets.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class WorkBoxWidget extends StatelessWidget with BaseExtension {
-  const WorkBoxWidget({
+  final bool isDesktop;
+  const WorkBoxWidget.mobile({
     Key? key,
+    this.isDesktop = false,
+  }) : super(key: key);
+  const WorkBoxWidget.tablet({
+    Key? key,
+    this.isDesktop = false,
+  }) : super(key: key);
+  const WorkBoxWidget.desktop({
+    Key? key,
+    required this.isDesktop,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Flex(
+      direction: isDesktop ? Axis.horizontal : Axis.vertical,
       children: [
-        SizedBox(
-          width: double.infinity,
-          height: 240,
-          child: ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: Image.asset(
-                'assets/images/featured_works_image.png',
-                fit: BoxFit.cover,
-              )),
-        ),
+        const WorkBoxImage(),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 17),
           child: SizedBox(

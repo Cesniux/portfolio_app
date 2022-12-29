@@ -11,6 +11,7 @@ class HeroView extends StatelessWidget with BaseExtension {
 
   @override
   Widget build(BuildContext context) {
+    print(getMaxHeight(context));
     return LayoutBuilder(
       builder: (context, constrains) {
         final screenType = getScreenType(constrains.maxWidth);
@@ -18,7 +19,7 @@ class HeroView extends StatelessWidget with BaseExtension {
           case ScreenType.mobile:
             return Container(
               height: getMaxHeight(context),
-              color: CColor.backgroundColorBright,
+              color: CColor.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -34,8 +35,10 @@ class HeroView extends StatelessWidget with BaseExtension {
             );
           case ScreenType.tablet:
             return Container(
-              height: getMaxHeight(context),
-              color: CColor.backgroundColorBright,
+              height: getMaxHeight(context) < 700
+                  ? null
+                  : getMaxHeight(context) * 0.9,
+              color: CColor.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -55,8 +58,10 @@ class HeroView extends StatelessWidget with BaseExtension {
             );
           case ScreenType.desktop:
             return Container(
-              height: getMaxHeight(context) * 0.8,
-              color: CColor.backgroundColorBright,
+              height: getMaxHeight(context) < 550
+                  ? null
+                  : getMaxHeight(context) * 0.9,
+              color: CColor.white,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 148),
                 child: Column(

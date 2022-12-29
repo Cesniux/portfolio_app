@@ -4,8 +4,19 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class BlogBox extends StatelessWidget with BaseExtension {
-  const BlogBox({
+  final double boxWidth;
+
+  const BlogBox.mobile({
     Key? key,
+    this.boxWidth = double.infinity,
+  }) : super(key: key);
+  const BlogBox.tablet({
+    Key? key,
+    this.boxWidth = double.infinity,
+  }) : super(key: key);
+  const BlogBox.desktop({
+    Key? key,
+    this.boxWidth = 400,
   }) : super(key: key);
 
   @override
@@ -14,11 +25,12 @@ class BlogBox extends StatelessWidget with BaseExtension {
       padding: const EdgeInsets.symmetric(horizontal: 11),
       child: Container(
         decoration: BoxDecoration(
-            color: CColor.backgroundColorBright,
+            color: CColor.white,
             borderRadius: const BorderRadius.all(Radius.circular(4))),
-        width: double.infinity,
+        width: boxWidth,
         padding: const EdgeInsets.symmetric(vertical: 19, horizontal: 19),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Making a design system from scratch',
