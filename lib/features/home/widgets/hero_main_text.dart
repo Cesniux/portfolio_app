@@ -23,7 +23,7 @@ class HeroMainText extends StatelessWidget with BaseExtension {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 31),
       child: Text(
-        'Hi, I am Domantas, Creative Technologist',
+        'Hi, I am Domantas, Digital Creator',
         textAlign: TextAlign.center,
         style:
             getTextTheme(context).headlineLarge!.copyWith(fontSize: fontSize),
