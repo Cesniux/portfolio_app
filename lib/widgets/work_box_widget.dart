@@ -21,8 +21,7 @@ class WorkBoxWidget extends StatelessWidget with BaseExtension {
 
   @override
   Widget build(BuildContext context) {
-    return Flex(
-      direction: isDesktop ? Axis.horizontal : Axis.vertical,
+    return Column(
       children: [
         const WorkBoxImage(),
         Padding(
