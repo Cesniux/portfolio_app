@@ -3,8 +3,7 @@ import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
-
-class WorkBoxTextPart extends StatelessWidget with BaseExtension{
+class WorkBoxTextPart extends StatelessWidget with BaseExtension {
   const WorkBoxTextPart({
     Key? key,
   }) : super(key: key);
@@ -19,8 +18,7 @@ class WorkBoxTextPart extends StatelessWidget with BaseExtension{
             width: double.infinity,
             child: Text(
               'Designing Dashboards',
-              style:
-                  getTextTheme(context).titleMedium!.copyWith(fontSize: 24),
+              style: getTextTheme(context).titleMedium!.copyWith(fontSize: 24),
               textAlign: TextAlign.left,
             ),
           ),
@@ -34,8 +32,7 @@ class WorkBoxTextPart extends StatelessWidget with BaseExtension{
                 height: 25,
                 decoration: BoxDecoration(
                     color: CColor.textColor,
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(16))),
+                    borderRadius: const BorderRadius.all(Radius.circular(16))),
                 child: Text(
                   '2020',
                   textAlign: TextAlign.center,

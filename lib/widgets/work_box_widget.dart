@@ -43,6 +43,9 @@ class WorkBoxWidget extends StatelessWidget with BaseExtension {
             return Row(
               children: [
                 const Expanded(child: WorkBoxImage()),
+                const SizedBox(
+                  width: 16,
+                ),
                 const Expanded(child: WorkBoxTextPart()),
                 Divider(
                   color: CColor.dividerGreycolor,
