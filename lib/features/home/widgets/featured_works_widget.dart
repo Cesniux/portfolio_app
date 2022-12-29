@@ -25,7 +25,7 @@ class FeaturedWorks extends StatelessWidget {
                     text: 'Featured works',
                     bottomPadding: 5,
                   ),
-                  WorkBoxWidget.mobile(),
+                  WorkBoxWidget(),
                   SizedBox(
                     height: 130,
                   ),
@@ -42,7 +42,7 @@ class FeaturedWorks extends StatelessWidget {
                     text: 'Featured works',
                     bottomPadding: 5,
                   ),
-                  WorkBoxWidget.tablet(),
+                  WorkBoxWidget(),
                   SizedBox(
                     height: 130,
                   ),
@@ -59,9 +59,7 @@ class FeaturedWorks extends StatelessWidget {
                     text: 'Featured works',
                     bottomPadding: 5,
                   ),
-                  WorkBoxWidget.desktop(
-                    isDesktop: true,
-                  ),
+                  WorkBoxWidget(),
                   SizedBox(
                     height: 130,
                   ),
