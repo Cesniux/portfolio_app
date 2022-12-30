@@ -21,7 +21,7 @@ class WorksSection extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: const [
-                  CustomSmallTitleText(
+                  SimpleSmallTitleText(
                     text: 'Featured works',
                     bottomPadding: 5,
                   ),
@@ -38,7 +38,7 @@ class WorksSection extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: const [
-                  CustomSmallTitleText(
+                  SimpleSmallTitleText(
                     text: 'Featured works',
                     bottomPadding: 5,
                   ),
@@ -55,7 +55,7 @@ class WorksSection extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 148),
               child: Column(
                 children: const [
-                  CustomSmallTitleText(
+                  SimpleSmallTitleText(
                     text: 'Featured works',
                     bottomPadding: 5,
                   ),

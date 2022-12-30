@@ -3,18 +3,18 @@ import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
-class BlogBox extends StatelessWidget with BaseMixin {
+class SimplePostBox extends StatelessWidget with BaseMixin {
   final double boxWidth;
 
-  const BlogBox.mobile({
+  const SimplePostBox.mobile({
     Key? key,
     this.boxWidth = double.infinity,
   }) : super(key: key);
-  const BlogBox.tablet({
+  const SimplePostBox.tablet({
     Key? key,
     this.boxWidth = double.infinity,
   }) : super(key: key);
-  const BlogBox.desktop({
+  const SimplePostBox.desktop({
     Key? key,
     this.boxWidth = 400,
   }) : super(key: key);
@@ -25,7 +25,7 @@ class BlogBox extends StatelessWidget with BaseMixin {
       padding: const EdgeInsets.symmetric(horizontal: 11),
       child: Container(
         decoration: BoxDecoration(
-            color: CColor.white,
+          color: CColor.white,
           borderRadius: const BorderRadius.all(
             Radius.circular(4),
           ),

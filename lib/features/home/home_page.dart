@@ -16,12 +16,19 @@ class HomeView extends StatelessWidget with BaseMixin {
         child: Column(
           children: const [
             HeroSection(
-              title: 'John Roe',
-              subtitle: 'Hey',
-              imageUrl: 'Hello',
-              cvDownloadUrl: 'Sup',
+              title: 'Hi, I am Domantas, Digital Creator',
+              subtitle:
+                  'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+              imageUrl: 'assets/images/profile_image.jpeg',
+              cvDownloadUrl: '',
             ),
-            PostsSection(),
+            PostsSection(
+                title: 'Yo dorm',
+                date: "30 Dec 2022",
+                description:
+                    'met minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam',
+                topicKeywords: 'Tea, New Years',
+                sectionTitle: 'Recent Pots'),
             WorksSection(),
             MediaSection(),
           ],

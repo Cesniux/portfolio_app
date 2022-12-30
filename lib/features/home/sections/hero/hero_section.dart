@@ -33,9 +33,19 @@ class HeroSection extends StatelessWidget with BaseMixin {
               cvDownloadUrl: cvDownloadUrl,
             );
           case ScreenType.tablet:
-            return const HeroSectionTablet();
+            return HeroSectionTablet(
+              title: title,
+              subtitle: subtitle,
+              imageUrl: imageUrl,
+              cvDownloadUrl: cvDownloadUrl,
+            );
           case ScreenType.desktop:
-            return const HeroSectionDesktop();
+            return HeroSectionDesktop(
+              title: title,
+              subtitle: subtitle,
+              imageUrl: imageUrl,
+              cvDownloadUrl: cvDownloadUrl,
+            );
         }
       },
     );

@@ -7,7 +7,17 @@ import 'package:portfolio_app/features/home/widgets/home_page_widgets.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 
 class HeroSectionTablet extends StatelessWidget with BaseMixin {
-  const HeroSectionTablet({super.key});
+  final String title;
+  final String subtitle;
+  final String imageUrl;
+  final String cvDownloadUrl;
+  const HeroSectionTablet({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.imageUrl,
+    required this.cvDownloadUrl,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +28,16 @@ class HeroSectionTablet extends StatelessWidget with BaseMixin {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const HeroPhoto(),
-          const HeroTitle.tablet(),
+          HeroPhoto(
+            imageUrl: imageUrl,
+          ),
+          HeroTitle.tablet(
+            title: title,
+          ),
           Padding(
             padding:
                 EdgeInsets.symmetric(horizontal: getMaxWidth(context) * 0.1),
-            child: const HeroSubtitle(),
+            child:  HeroSubtitle(subtitle: subtitle,),
           ),
           const HeroButton(
             text: 'Download Resume',

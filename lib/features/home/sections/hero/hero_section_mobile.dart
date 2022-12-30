@@ -27,11 +27,13 @@ class HeroSectionMobile extends StatelessWidget with BaseMixin {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          HeroPhoto(),
-          HeroTitle.mobile(),
-          HeroSubtitle(),
-          HeroButton(
+        children: [
+          HeroPhoto(
+            imageUrl: imageUrl,
+          ),
+           HeroTitle.mobile(title: title,),
+           HeroSubtitle(subtitle: subtitle,),
+          const HeroButton(
             text: 'Download Resume',
           ),
         ],
