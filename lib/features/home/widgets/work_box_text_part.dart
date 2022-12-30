@@ -3,7 +3,7 @@ import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
-class WorkBoxTextPart extends StatelessWidget with BaseExtension {
+class WorkBoxTextPart extends StatelessWidget with BaseMixin {
   const WorkBoxTextPart({
     Key? key,
   }) : super(key: key);

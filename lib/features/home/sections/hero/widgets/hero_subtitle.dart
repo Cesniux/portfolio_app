@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 
-class HeroParagraphText extends StatelessWidget with BaseExtension {
-  const HeroParagraphText({
+class HeroSubtitle extends StatelessWidget with BaseMixin {
+  const HeroSubtitle({
     Key? key,
   }) : super(key: key);
 

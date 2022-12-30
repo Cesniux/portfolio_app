@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 
-class CustomSmallTitleText extends StatelessWidget with BaseExtension {
+class CustomSmallTitleText extends StatelessWidget with BaseMixin {
   final String text;
   final double bottomPadding;
   const CustomSmallTitleText({

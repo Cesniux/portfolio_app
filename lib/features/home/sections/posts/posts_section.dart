@@ -4,8 +4,8 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
-class RecentPosts extends StatelessWidget with BaseExtension {
-  const RecentPosts({
+class PostsSection extends StatelessWidget with BaseMixin {
+  const PostsSection({
     Key? key,
   }) : super(key: key);
 

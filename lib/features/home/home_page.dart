@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 
 import '../../widgets/widgets.dart';
+import 'sections/hero/hero_section.dart';
 import 'widgets/home_page_widgets.dart';
 
-
-class HomeView extends StatelessWidget with BaseExtension {
+class HomeView extends StatelessWidget with BaseMixin {
   const HomeView({super.key});
 
   @override
@@ -15,10 +15,15 @@ class HomeView extends StatelessWidget with BaseExtension {
       body: SingleChildScrollView(
         child: Column(
           children: const [
-            HeroView(),
-            RecentPosts(),
-            FeaturedWorks(),
-            SocialMediaCopyrightBox(),
+            HeroSection(
+              title: 'John Roe',
+              subtitle: 'Hey',
+              imageUrl: 'Hello',
+              cvDownloadUrl: 'Sup',
+            ),
+            PostsSection(),
+            WorksSection(),
+            MediaSection(),
           ],
         ),
       ),

@@ -3,8 +3,8 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
-class FeaturedWorks extends StatelessWidget {
-  const FeaturedWorks({
+class WorksSection extends StatelessWidget {
+  const WorksSection({
     Key? key,
   }) : super(key: key);
 

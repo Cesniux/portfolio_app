@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 
-class SocialMediaCopyrightBox extends StatelessWidget with BaseExtension {
-  const SocialMediaCopyrightBox({
+class MediaSection extends StatelessWidget with BaseMixin {
+  const MediaSection({
     Key? key,
   }) : super(key: key);
 

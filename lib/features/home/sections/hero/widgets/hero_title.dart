@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 
-class HeroMainText extends StatelessWidget with BaseExtension {
+class HeroTitle extends StatelessWidget with BaseMixin {
   final double fontSize;
 
-  const HeroMainText.mobile({
+  const HeroTitle.mobile({
     this.fontSize = 32,
     Key? key,
   }) : super(key: key);
 
-  const HeroMainText.tablet({
+  const HeroTitle.tablet({
     this.fontSize = 38,
     Key? key,
   }) : super(key: key);
-  const HeroMainText.desktop({
+  const HeroTitle.desktop({
     this.fontSize = 46,
     Key? key,
   }) : super(key: key);

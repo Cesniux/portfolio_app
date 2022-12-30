@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-mixin BaseExtension {
+mixin BaseMixin {
   bool get isAndroid => true;
 
   bool get bottomSafeArea => isAndroid;

@@ -3,7 +3,7 @@ import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
-class BlogBox extends StatelessWidget with BaseExtension {
+class BlogBox extends StatelessWidget with BaseMixin {
   final double boxWidth;
 
   const BlogBox.mobile({
@@ -26,7 +26,10 @@ class BlogBox extends StatelessWidget with BaseExtension {
       child: Container(
         decoration: BoxDecoration(
             color: CColor.white,
-            borderRadius: const BorderRadius.all(Radius.circular(4))),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(4),
+          ),
+        ),
         width: boxWidth,
         padding: const EdgeInsets.symmetric(vertical: 19, horizontal: 19),
         child: Column(

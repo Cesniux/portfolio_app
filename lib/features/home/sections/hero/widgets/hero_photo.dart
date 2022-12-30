@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 
-class ProfilePhoto extends StatelessWidget {
-  const ProfilePhoto({
+class HeroPhoto extends StatelessWidget {
+  const HeroPhoto({
     Key? key,
   }) : super(key: key);
 

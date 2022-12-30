@@ -4,7 +4,7 @@ import 'package:portfolio_app/features/home/widgets/home_page_widgets.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 
-class WorkBoxWidget extends StatelessWidget with BaseExtension {
+class WorkBoxWidget extends StatelessWidget with BaseMixin {
   const WorkBoxWidget({
     Key? key,
   }) : super(key: key);
