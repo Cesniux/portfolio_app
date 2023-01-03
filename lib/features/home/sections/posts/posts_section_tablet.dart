@@ -3,13 +3,18 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class PostsSectionTablet extends StatelessWidget {
-final String title;
+  final String title;
   final String date;
   final String topicKeywords;
   final String description;
   final String sectionTitle;
   const PostsSectionTablet({
-    Key? key, required this.title, required this.date, required this.topicKeywords, required this.description, required this.sectionTitle,
+    Key? key,
+    required this.title,
+    required this.date,
+    required this.topicKeywords,
+    required this.description,
+    required this.sectionTitle,
   }) : super(key: key);
 
   @override
