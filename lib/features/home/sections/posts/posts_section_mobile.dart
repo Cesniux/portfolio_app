@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
@@ -29,11 +30,33 @@ class PostsSectionMobile extends StatelessWidget {
             SimpleSmallTitleText(
               text: sectionTitle,
             ),
-            const SimplePostBox.mobile(),
-            const SizedBox(
-              height: 17,
-            ),
-            const SimplePostBox.mobile(),
+            StreamBuilder<QuerySnapshot>(
+                stream:
+                    FirebaseFirestore.instance.collection('posts').snapshots(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                  print(snapshot);
+                  if (snapshot.hasData) {
+                    final snap = snapshot.data!.docs;
+
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      primary: false,
+                      itemCount: 3,
+                      itemBuilder: (context, index) {
+                        return Text(snap[index]['title']);
+                        // return SimplePostBox.mobile(
+                        //   title: snap[index]['title'],
+                        //   date: snap[index]['date'],
+                        //   description: snap[index]['descprition'],
+                        //   topicKeywords: snap[index]['topicKeywords'],
+                        // );
+                      },
+                    );
+                  } else {
+                    return const SizedBox();
+                  }
+                }),
           ],
         ),
       ),

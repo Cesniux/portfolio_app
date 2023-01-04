@@ -44,8 +44,17 @@ class PostsSectionDesktop extends StatelessWidget with BaseMixin {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  Expanded(child: SimplePostBox.desktop()),
-                  Expanded(child: SimplePostBox.desktop()),
+                  Expanded(
+                      child: SimplePostBox.desktop(
+                    title: "yo",
+                    date: "2023",
+                    description: "hahayo",
+                    topicKeywords: "yomata, kantare",
+                  )),
+                  Expanded(child: SimplePostBox.desktop(  title: "yo",
+                    date: "2023",
+                    description: "hahayo",
+                    topicKeywords: "yomata, kantare",)),
                 ],
               )
             ],

@@ -5,18 +5,34 @@ import 'package:portfolio_app/widgets/widgets.dart';
 
 class SimplePostBox extends StatelessWidget with BaseMixin {
   final double boxWidth;
+  final String title;
+  final String date;
+  final String topicKeywords;
+  final String description;
 
   const SimplePostBox.mobile({
     Key? key,
     this.boxWidth = double.infinity,
+    required this.title,
+    required this.date,
+    required this.topicKeywords,
+    required this.description,
   }) : super(key: key);
   const SimplePostBox.tablet({
     Key? key,
     this.boxWidth = double.infinity,
+    required this.title,
+    required this.date,
+    required this.topicKeywords,
+    required this.description,
   }) : super(key: key);
   const SimplePostBox.desktop({
     Key? key,
     this.boxWidth = 400,
+    required this.title,
+    required this.date,
+    required this.topicKeywords,
+    required this.description,
   }) : super(key: key);
 
   @override
@@ -36,7 +52,7 @@ class SimplePostBox extends StatelessWidget with BaseMixin {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Making a design system from scratch',
+              title,
               style: getTextTheme(context).titleMedium,
             ),
             Padding(
@@ -45,7 +61,7 @@ class SimplePostBox extends StatelessWidget with BaseMixin {
                 child: Row(
                   children: [
                     Text(
-                      '12 Feb 2020',
+                      date,
                       style: getTextTheme(context).bodyMedium,
                     ),
                     VerticalDivider(
@@ -55,16 +71,15 @@ class SimplePostBox extends StatelessWidget with BaseMixin {
                       endIndent: 3,
                     ),
                     Text(
-                      'Design, Pattern',
+                      topicKeywords,
                       style: getTextTheme(context).bodyMedium,
                     ),
                   ],
                 ),
               ),
             ),
-            const ShortParagraphText(
-              text:
-                  'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+            ShortParagraphText(
+              text: description,
             ),
           ],
         ),

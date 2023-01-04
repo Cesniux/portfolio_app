@@ -29,11 +29,17 @@ class PostsSectionTablet extends StatelessWidget {
             SimpleSmallTitleText(
               text: 'Recent posts',
             ),
-            SimplePostBox.tablet(),
-            SizedBox(
-              height: 17,
-            ),
-            SimplePostBox.tablet(),
+            SimplePostBox.tablet(  title: "yo",
+                    date: "2023",
+                    description: "hahayo",
+                    topicKeywords: "yomata, kantare",),
+            // SizedBox(
+            //   height: 40,
+            // ),
+            SimplePostBox.tablet(  title: "yo",
+                    date: "2023",
+                    description: "hahayo",
+                    topicKeywords: "yomata, kantare",),
           ],
         ),
       ),
