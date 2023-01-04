@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/features/home/models/post.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
@@ -9,6 +10,8 @@ class PostsSectionDesktop extends StatelessWidget with BaseMixin {
   final String topicKeywords;
   final String description;
   final String sectionTitle;
+  final List<Post> posts;
+
   const PostsSectionDesktop({
     Key? key,
     required this.title,
@@ -16,6 +19,7 @@ class PostsSectionDesktop extends StatelessWidget with BaseMixin {
     required this.topicKeywords,
     required this.description,
     required this.sectionTitle,
+    required this.posts,
   }) : super(key: key);
 
   @override
@@ -43,18 +47,16 @@ class PostsSectionDesktop extends StatelessWidget with BaseMixin {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Expanded(
+                children: [
+                  ...posts.map((post) {
+                    return Expanded(
                       child: SimplePostBox.desktop(
-                    title: "yo",
-                    date: "2023",
-                    description: "hahayo",
-                    topicKeywords: "yomata, kantare",
-                  )),
-                  Expanded(child: SimplePostBox.desktop(  title: "yo",
-                    date: "2023",
-                    description: "hahayo",
-                    topicKeywords: "yomata, kantare",)),
+                          title: post.title,
+                          date: post.date,
+                          topicKeywords: post.topicKeywords,
+                          description: post.description),
+                    );
+                  }),
                 ],
               )
             ],

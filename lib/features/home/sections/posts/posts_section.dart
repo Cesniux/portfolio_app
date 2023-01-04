@@ -40,7 +40,7 @@ class PostsSection extends StatelessWidget with BaseMixin {
         ),
       );
     }
-    // print(posts);
+    //print(posts);
     return posts;
   }
 
@@ -88,6 +88,7 @@ class PostsSection extends StatelessWidget with BaseMixin {
                     topicKeywords: topicKeywords,
                     description: description,
                     sectionTitle: sectionTitle,
+                    posts: snapshot.data as List<Post>,
                   );
               }
             },

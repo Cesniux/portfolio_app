@@ -5,6 +5,7 @@ import 'package:portfolio_app/widgets/widgets.dart';
 
 class SimplePostBox extends StatelessWidget with BaseMixin {
   final double boxWidth;
+  final double bottomPadding;
   final String title;
   final String date;
   final String topicKeywords;
@@ -17,6 +18,7 @@ class SimplePostBox extends StatelessWidget with BaseMixin {
     required this.date,
     required this.topicKeywords,
     required this.description,
+    this.bottomPadding = 17,
   }) : super(key: key);
   const SimplePostBox.tablet({
     Key? key,
@@ -25,6 +27,7 @@ class SimplePostBox extends StatelessWidget with BaseMixin {
     required this.date,
     required this.topicKeywords,
     required this.description,
+    this.bottomPadding = 17,
   }) : super(key: key);
   const SimplePostBox.desktop({
     Key? key,
@@ -33,12 +36,13 @@ class SimplePostBox extends StatelessWidget with BaseMixin {
     required this.date,
     required this.topicKeywords,
     required this.description,
+    this.bottomPadding = 0,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 11),
+      padding: EdgeInsets.only(left: 11, right: 11, bottom: bottomPadding),
       child: Container(
         decoration: BoxDecoration(
           color: CColor.white,
