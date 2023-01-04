@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/features/home/models/post.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
@@ -8,6 +9,7 @@ class PostsSectionTablet extends StatelessWidget {
   final String topicKeywords;
   final String description;
   final String sectionTitle;
+  final List<Post> posts;
   const PostsSectionTablet({
     Key? key,
     required this.title,
@@ -15,6 +17,7 @@ class PostsSectionTablet extends StatelessWidget {
     required this.topicKeywords,
     required this.description,
     required this.sectionTitle,
+    required this.posts,
   }) : super(key: key);
 
   @override
@@ -25,21 +28,18 @@ class PostsSectionTablet extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Column(
-          children: const [
-            SimpleSmallTitleText(
+          children: [
+            const SimpleSmallTitleText(
               text: 'Recent posts',
             ),
-            SimplePostBox.tablet(  title: "yo",
-                    date: "2023",
-                    description: "hahayo",
-                    topicKeywords: "yomata, kantare",),
-            // SizedBox(
-            //   height: 40,
-            // ),
-            SimplePostBox.tablet(  title: "yo",
-                    date: "2023",
-                    description: "hahayo",
-                    topicKeywords: "yomata, kantare",),
+            ...posts.map(
+              (post) => SimplePostBox.tablet(
+                title: post.title,
+                date: post.date,
+                description: post.description,
+                topicKeywords: post.topicKeywords,
+              ),
+            ),
           ],
         ),
       ),

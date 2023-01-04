@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/features/home/models/post.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
+
 
 class PostsSectionMobile extends StatelessWidget {
   final String title;
@@ -9,6 +11,7 @@ class PostsSectionMobile extends StatelessWidget {
   final String topicKeywords;
   final String description;
   final String sectionTitle;
+  final List<Post> posts;
   const PostsSectionMobile({
     Key? key,
     required this.title,
@@ -16,6 +19,7 @@ class PostsSectionMobile extends StatelessWidget {
     required this.topicKeywords,
     required this.description,
     required this.sectionTitle,
+    required this.posts,
   }) : super(key: key);
 
   @override
@@ -35,6 +39,7 @@ class PostsSectionMobile extends StatelessWidget {
                     FirebaseFirestore.instance.collection('posts').snapshots(),
                 builder: (BuildContext context,
                     AsyncSnapshot<QuerySnapshot> snapshot) {
+                  print('Hello');
                   print(snapshot);
                   if (snapshot.hasData) {
                     final snap = snapshot.data!.docs;
