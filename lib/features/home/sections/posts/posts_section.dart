@@ -24,7 +24,11 @@ class PostsSection extends StatelessWidget with BaseMixin {
   }) : super(key: key);
 
   Future<List<Post>> getPosts() async {
-    var response = await FirebaseFirestore.instance.collection('posts').get();
+    var response = await FirebaseFirestore.instance
+        .collection('posts')
+        .orderBy('timeStamp', descending: true)
+        .limit(2)
+        .get();
     List<Post> posts = [];
     // print(posts);
 

@@ -18,6 +18,10 @@ class HeroSection extends StatelessWidget with BaseMixin {
     required this.imageUrl,
     required this.cvDownloadUrl,
   }) : super(key: key);
+  // Future<List<String>> getHeroInfo () {
+
+  // }
+
 
   @override
   Widget build(BuildContext context) {

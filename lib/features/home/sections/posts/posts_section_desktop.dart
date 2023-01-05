@@ -46,6 +46,7 @@ class PostsSectionDesktop extends StatelessWidget with BaseMixin {
                 ),
               ),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ...posts.map((post) {
