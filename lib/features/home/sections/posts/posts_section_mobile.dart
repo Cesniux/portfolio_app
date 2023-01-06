@@ -4,19 +4,10 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class PostsSectionMobile extends StatelessWidget {
-  final String title;
-  final String date;
-  final String topicKeywords;
-  final String description;
-  final String sectionTitle;
+ 
   final List<Post> posts;
   const PostsSectionMobile({
     Key? key,
-    required this.title,
-    required this.date,
-    required this.topicKeywords,
-    required this.description,
-    required this.sectionTitle,
     required this.posts,
   }) : super(key: key);
 
@@ -30,7 +21,7 @@ class PostsSectionMobile extends StatelessWidget {
         child: Column(
           children: [
             SimpleSmallTitleText(
-              text: sectionTitle,
+              text: "Recent Postssssss",
             ),
             ...posts.map((post) => SimplePostBox.mobile(
                 title: post.title,

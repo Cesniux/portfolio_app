@@ -4,7 +4,8 @@ import 'package:portfolio_app/style/res/constants.dart';
 class HeroPhoto extends StatelessWidget {
   final String imageUrl;
   const HeroPhoto({
-    Key? key, required this.imageUrl,
+    Key? key,
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -20,8 +21,8 @@ class HeroPhoto extends StatelessWidget {
           )
         ]),
         child: ClipOval(
-            child: Image.asset(
-          imageUrl,
+            child: Image.network(
+          'https://firebasestorage.googleapis.com/v0/b/portfolio-app-6c932.appspot.com/o/profile_image.jpeg?alt=media&token=a56f365d-4067-4a67-836f-305301cc0145',
           width: 180,
           height: 180,
           fit: BoxFit.cover,

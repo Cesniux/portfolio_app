@@ -5,20 +5,12 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class PostsSectionDesktop extends StatelessWidget with BaseMixin {
-  final String title;
-  final String date;
-  final String topicKeywords;
-  final String description;
-  final String sectionTitle;
+
   final List<Post> posts;
 
   const PostsSectionDesktop({
     Key? key,
-    required this.title,
-    required this.date,
-    required this.topicKeywords,
-    required this.description,
-    required this.sectionTitle,
+ 
     required this.posts,
   }) : super(key: key);
 

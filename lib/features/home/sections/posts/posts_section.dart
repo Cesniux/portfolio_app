@@ -69,29 +69,17 @@ class PostsSection extends StatelessWidget with BaseMixin {
               switch (screenType) {
                 case ScreenType.mobile:
                   return PostsSectionMobile(
-                    title: title,
-                    date: date,
-                    topicKeywords: topicKeywords,
-                    description: description,
-                    sectionTitle: sectionTitle,
+                    
                     posts: snapshot.data as List<Post>,
                   );
                 case ScreenType.tablet:
                   return PostsSectionTablet(
-                    title: title,
-                    date: date,
-                    topicKeywords: topicKeywords,
-                    description: description,
-                    sectionTitle: sectionTitle,
+                   
                     posts: snapshot.data as List<Post>,
                   );
                 case ScreenType.desktop:
                   return PostsSectionDesktop(
-                    title: title,
-                    date: date,
-                    topicKeywords: topicKeywords,
-                    description: description,
-                    sectionTitle: sectionTitle,
+                    
                     posts: snapshot.data as List<Post>,
                   );
               }

@@ -4,19 +4,9 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class PostsSectionTablet extends StatelessWidget {
-  final String title;
-  final String date;
-  final String topicKeywords;
-  final String description;
-  final String sectionTitle;
   final List<Post> posts;
   const PostsSectionTablet({
     Key? key,
-    required this.title,
-    required this.date,
-    required this.topicKeywords,
-    required this.description,
-    required this.sectionTitle,
     required this.posts,
   }) : super(key: key);
 
@@ -30,7 +20,7 @@ class PostsSectionTablet extends StatelessWidget {
         child: Column(
           children: [
             const SimpleSmallTitleText(
-              text: 'Recent posts',
+              text: 'Recent pots',
             ),
             ...posts.map(
               (post) => SimplePostBox.tablet(
