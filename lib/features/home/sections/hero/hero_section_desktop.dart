@@ -7,16 +7,13 @@ import 'package:portfolio_app/features/home/widgets/home_page_widgets.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 
 class HeroSectionDesktop extends StatelessWidget with BaseMixin {
-  final String title;
-  final String subtitle;
-  final String imageUrl;
-  final String cvDownloadUrl;
+  
+  final Map<String, dynamic> heroData;
+
   const HeroSectionDesktop({
     super.key,
-    required this.title,
-    required this.subtitle,
-    required this.imageUrl,
-    required this.cvDownloadUrl,
+ 
+    required this.heroData,
   });
 
   @override
@@ -31,16 +28,18 @@ class HeroSectionDesktop extends StatelessWidget with BaseMixin {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             HeroPhoto(
-              imageUrl: imageUrl,
+              imageUrl: heroData['image'],
             ),
-             HeroTitle.desktop(title: title),
+            HeroTitle.desktop(title: heroData['title']),
             Padding(
               padding:
                   EdgeInsets.symmetric(horizontal: getMaxWidth(context) * 0.1),
-              child:  HeroSubtitle(subtitle: subtitle,),
+              child: HeroSubtitle(
+                subtitle: heroData['subtitle'],
+              ),
             ),
-            const HeroButton(
-              text: 'Download Resume',
+            HeroButton(
+              text: heroData['buttonText'],
             ),
           ],
         ),

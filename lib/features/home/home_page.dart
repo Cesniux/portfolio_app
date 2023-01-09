@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
-import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/app_bar/custom_appbar_mobile.dart';
 import 'package:portfolio_app/widgets/simple_drawer/simple_drawer.dart';
 
@@ -25,14 +24,9 @@ class HomeView extends StatelessWidget with BaseMixin {
                   'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
               imageUrl: 'assets/images/profile_image.jpeg',
               cvDownloadUrl: '',
+              buttonText: 'Download Resume',
             ),
-            PostsSection(
-                title: 'Yo dorm',
-                date: "30 Dec 2022",
-                description:
-                    'met minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam',
-                topicKeywords: 'Tea, New Years',
-                sectionTitle: 'Recent Pots'),
+            PostsSection(sectionTitle: 'Recent Posts'),
             WorksSection(),
             MediaSection(),
           ],

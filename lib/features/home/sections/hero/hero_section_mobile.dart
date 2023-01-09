@@ -7,16 +7,13 @@ import 'package:portfolio_app/features/home/sections/hero/widgets/hero_title.dar
 import 'package:portfolio_app/style/res/constants.dart';
 
 class HeroSectionMobile extends StatelessWidget with BaseMixin {
-  final String title;
-  final String subtitle;
-  final String imageUrl;
-  final String cvDownloadUrl;
+
+final Map<String, dynamic> heroData;
+
   const HeroSectionMobile({
     super.key,
-    required this.title,
-    required this.subtitle,
-    required this.imageUrl,
-    required this.cvDownloadUrl,
+
+    required this.heroData,
   });
 
   @override
@@ -29,12 +26,16 @@ class HeroSectionMobile extends StatelessWidget with BaseMixin {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           HeroPhoto(
-            imageUrl: imageUrl,
+            imageUrl: heroData['image'],
           ),
-           HeroTitle.mobile(title: title,),
-           HeroSubtitle(subtitle: subtitle,),
-          const HeroButton(
-            text: 'Download Resume',
+          HeroTitle.mobile(
+            title: heroData['title'],
+          ),
+          HeroSubtitle(
+            subtitle: heroData['subtitle'],
+          ),
+          HeroButton(
+            text: heroData['buttonText'],
           ),
         ],
       ),

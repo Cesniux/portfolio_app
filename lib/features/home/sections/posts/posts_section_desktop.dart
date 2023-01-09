@@ -5,13 +5,13 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class PostsSectionDesktop extends StatelessWidget with BaseMixin {
-
+  final String sectionTitle;
   final List<Post> posts;
 
   const PostsSectionDesktop({
     Key? key,
- 
     required this.posts,
+    required this.sectionTitle,
   }) : super(key: key);
 
   @override
@@ -30,8 +30,8 @@ class PostsSectionDesktop extends StatelessWidget with BaseMixin {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const SimpleSmallTitleText(
-                      text: 'Recent posts',
+                    SimpleSmallTitleText(
+                      text: sectionTitle,
                     ),
                     TextButton(onPressed: () {}, child: const Text('View all'))
                   ],

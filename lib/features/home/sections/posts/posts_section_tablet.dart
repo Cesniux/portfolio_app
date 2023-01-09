@@ -4,10 +4,12 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class PostsSectionTablet extends StatelessWidget {
+  final String sectionTitle;
   final List<Post> posts;
   const PostsSectionTablet({
     Key? key,
     required this.posts,
+    required this.sectionTitle,
   }) : super(key: key);
 
   @override
@@ -19,8 +21,8 @@ class PostsSectionTablet extends StatelessWidget {
         width: double.infinity,
         child: Column(
           children: [
-            const SimpleSmallTitleText(
-              text: 'Recent pots',
+            SimpleSmallTitleText(
+              text: sectionTitle,
             ),
             ...posts.map(
               (post) => SimplePostBox.tablet(

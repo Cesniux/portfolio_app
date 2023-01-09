@@ -9,17 +9,9 @@ import 'posts_section_mobile.dart';
 import 'posts_section_tablet.dart';
 
 class PostsSection extends StatelessWidget with BaseMixin {
-  final String title;
-  final String date;
-  final String topicKeywords;
-  final String description;
   final String sectionTitle;
   const PostsSection({
     Key? key,
-    required this.title,
-    required this.date,
-    required this.topicKeywords,
-    required this.description,
     required this.sectionTitle,
   }) : super(key: key);
 
@@ -44,7 +36,7 @@ class PostsSection extends StatelessWidget with BaseMixin {
         ),
       );
     }
-    //print(posts);
+    // print(posts);
     return posts;
   }
 
@@ -69,17 +61,17 @@ class PostsSection extends StatelessWidget with BaseMixin {
               switch (screenType) {
                 case ScreenType.mobile:
                   return PostsSectionMobile(
-                    
+                    sectionTitle: sectionTitle,
                     posts: snapshot.data as List<Post>,
                   );
                 case ScreenType.tablet:
                   return PostsSectionTablet(
-                   
+                    sectionTitle: sectionTitle,
                     posts: snapshot.data as List<Post>,
                   );
                 case ScreenType.desktop:
                   return PostsSectionDesktop(
-                    
+                    sectionTitle: sectionTitle,
                     posts: snapshot.data as List<Post>,
                   );
               }
