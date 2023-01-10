@@ -8,19 +8,11 @@ import 'hero_section_mobile.dart';
 import 'hero_section_tablet.dart';
 
 class HeroSection extends StatelessWidget with BaseMixin {
-  final String title;
-  final String subtitle;
-  final String imageUrl;
-  final String cvDownloadUrl;
-  final String buttonText;
+
 
   const HeroSection({
     Key? key,
-    required this.title,
-    required this.subtitle,
-    required this.imageUrl,
-    required this.cvDownloadUrl,
-    required this.buttonText,
+
   }) : super(key: key);
 
   Future<Map<String, dynamic>?> getHeroData() async {
@@ -34,7 +26,7 @@ class HeroSection extends StatelessWidget with BaseMixin {
   }
 
   @override
-  Widget build(BuildContext klcontext) {
+  Widget build(BuildContext context) {
     return FutureBuilder(
         initialData: const [],
         future: getHeroData(),
@@ -62,7 +54,6 @@ class HeroSection extends StatelessWidget with BaseMixin {
                   );
                 case ScreenType.desktop:
                   return HeroSectionDesktop(
-                   
                     heroData: snapshot.data as Map<String, dynamic>,
                   );
               }

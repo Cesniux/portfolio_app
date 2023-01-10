@@ -5,8 +5,19 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 
 class WorkBoxWidget extends StatelessWidget with BaseMixin {
+  final String workTitle;
+  final String year;
+  final String keyword;
+  final String description;
+  final String imageUrl;
+
   const WorkBoxWidget({
     Key? key,
+    required this.workTitle,
+    required this.year,
+    required this.keyword,
+    required this.description,
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -18,8 +29,14 @@ class WorkBoxWidget extends StatelessWidget with BaseMixin {
           case ScreenType.mobile:
             return Column(
               children: [
-                const WorkBoxImage(),
-                const WorkBoxTextPart(),
+                WorkBoxImage(
+                  imageUrl: imageUrl,
+                ),
+                WorkBoxTextPart(
+                    workTitle: workTitle,
+                    year: year,
+                    keyword: keyword,
+                    description: description),
                 Divider(
                   color: CColor.dividerGreycolor,
                   height: 34,
@@ -30,8 +47,14 @@ class WorkBoxWidget extends StatelessWidget with BaseMixin {
           case ScreenType.tablet:
             return Column(
               children: [
-                const WorkBoxImage(),
-                const WorkBoxTextPart(),
+                WorkBoxImage(
+                  imageUrl: imageUrl,
+                ),
+                WorkBoxTextPart(
+                    workTitle: workTitle,
+                    year: year,
+                    keyword: keyword,
+                    description: description),
                 Divider(
                   color: CColor.dividerGreycolor,
                   height: 34,
@@ -40,16 +63,35 @@ class WorkBoxWidget extends StatelessWidget with BaseMixin {
               ],
             );
           case ScreenType.desktop:
-            return Row(
+            return Column(
               children: [
-                const Expanded(child: WorkBoxImage()),
-                const SizedBox(
-                  width: 16,
+                Row(
+                  children: [
+                    Expanded(
+                      child: WorkBoxImage(
+                        imageUrl: imageUrl,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    Expanded(
+                      child: WorkBoxTextPart(
+                          workTitle: workTitle,
+                          year: year,
+                          keyword: keyword,
+                          description: description),
+                    ),
+                    Divider(
+                      color: CColor.dividerGreycolor,
+                      height: 34,
+                      thickness: 1.5,
+                    )
+                  ],
                 ),
-                const Expanded(child: WorkBoxTextPart()),
                 Divider(
                   color: CColor.dividerGreycolor,
-                  height: 34,
+                  height: 50,
                   thickness: 1.5,
                 )
               ],

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class WorkBoxImage extends StatelessWidget {
+  final String imageUrl;
   const WorkBoxImage({
-    Key? key,
+    Key? key, required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -12,8 +13,8 @@ class WorkBoxImage extends StatelessWidget {
       height: 240,
       child: ClipRRect(
           borderRadius: BorderRadius.circular(4),
-          child: Image.asset(
-            'assets/images/featured_works_image.png',
+          child: Image.network(
+            imageUrl,
             fit: BoxFit.cover,
           )),
     );

@@ -4,8 +4,16 @@ import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class WorkBoxTextPart extends StatelessWidget with BaseMixin {
+  final String workTitle;
+  final String year;
+  final String keyword;
+  final String description;
   const WorkBoxTextPart({
     Key? key,
+    required this.workTitle,
+    required this.year,
+    required this.keyword,
+    required this.description,
   }) : super(key: key);
 
   @override
@@ -17,7 +25,7 @@ class WorkBoxTextPart extends StatelessWidget with BaseMixin {
           child: SizedBox(
             width: double.infinity,
             child: Text(
-              'Designing Dashboards',
+              workTitle,
               style: getTextTheme(context).titleMedium!.copyWith(fontSize: 24),
               textAlign: TextAlign.left,
             ),
@@ -34,7 +42,7 @@ class WorkBoxTextPart extends StatelessWidget with BaseMixin {
                     color: CColor.textColor,
                     borderRadius: const BorderRadius.all(Radius.circular(16))),
                 child: Text(
-                  '2020',
+                  year,
                   textAlign: TextAlign.center,
                   style: getTextTheme(context).labelSmall,
                 ),
@@ -43,7 +51,7 @@ class WorkBoxTextPart extends StatelessWidget with BaseMixin {
                 width: 22,
               ),
               Text(
-                'Dashboard',
+                keyword,
                 style: TextStyle(
                   color: CColor.labelColor,
                   fontSize: 16,
@@ -52,9 +60,7 @@ class WorkBoxTextPart extends StatelessWidget with BaseMixin {
             ],
           ),
         ),
-        const ShortParagraphText(
-            text:
-                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'),
+        ShortParagraphText(text: description),
       ],
     );
   }
