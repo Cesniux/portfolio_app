@@ -60,7 +60,7 @@ class MediaSection extends StatelessWidget with BaseMixin {
           ),
         ),
         Text(
-          'Copyright ©2020 All rights reserved',
+          'Copyright ©2023 All rights reserved',
           style: getTextTheme(context).bodyMedium!.copyWith(fontSize: 14),
         ),
         const SizedBox(

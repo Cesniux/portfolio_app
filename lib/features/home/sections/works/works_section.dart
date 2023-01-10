@@ -11,8 +11,11 @@ class WorksSection extends StatelessWidget {
   }) : super(key: key);
 
   Future<List<Work>> getWorkData() async {
-    var response =
-        await FirebaseFirestore.instance.collection('works').limit(3).get();
+    var response = await FirebaseFirestore.instance
+        .collection('works')
+        .orderBy('year', descending: true)
+        .limit(3)
+        .get();
 
     List<Work> works = [];
 
@@ -25,7 +28,7 @@ class WorksSection extends StatelessWidget {
           description: data['description'],
           imageUrl: data['imageUrl']));
     }
-    print(works);
+    // print(works);
 
     return works;
   }
