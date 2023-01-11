@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/features/home/blocs/home_bloc.dart';
+import 'package:portfolio_app/features/home/repositories/home_dummy_repository.dart';
+import 'package:portfolio_app/features/home/repositories/home_firebase_repository.dart';
+import 'package:portfolio_app/service/firebase_service.dart';
 import 'package:portfolio_app/widgets/app_bar/custom_appbar_mobile.dart';
 import 'package:portfolio_app/widgets/simple_drawer/simple_drawer.dart';
 
@@ -12,17 +17,25 @@ class HomeView extends StatelessWidget with BaseMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBarMobile(),
-      endDrawer: const SimpleDrawer(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            HeroSection(),
-            PostsSection(sectionTitle: 'Recent Posts'),
-            WorksSection(),
-            MediaSection(),
-          ],
+    return BlocProvider(
+      create: (context) => HomeBloc(
+        homeRepository: HomeFirebaseRepository(
+          firebaseService: context.read<FirebaseService>(),
+        ),
+        homeOfflineRepository: HomeDummyRepository(),
+      ),
+      child: Scaffold(
+        appBar: const CustomAppBarMobile(),
+        endDrawer: const SimpleDrawer(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: const [
+              HeroSection(),
+              PostsSection(sectionTitle: 'Recent Posts'),
+              WorksSection(),
+              MediaSection(),
+            ],
+          ),
         ),
       ),
     );

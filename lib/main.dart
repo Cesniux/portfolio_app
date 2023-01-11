@@ -1,5 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio_app/features/home/repositories/home_dummy_repository.dart';
+import 'package:portfolio_app/service/firebase_service.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/style/theme/text_theme.dart';
 
@@ -19,16 +22,26 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: 'Heebo',
-        textTheme: textTheme,
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: CColor.white,
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider(
+          create: (context) => FirebaseService(),
+        ),
+        RepositoryProvider(
+          create: (context) => HomeDummyRepository(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          fontFamily: 'Heebo',
+          textTheme: textTheme,
+          primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: CColor.white,
+        ),
+        home: const HomeView(),
       ),
-      home: const HomeView(),
     );
   }
 }

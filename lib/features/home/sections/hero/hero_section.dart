@@ -23,24 +23,18 @@ class HeroSection extends StatelessWidget with BaseMixin {
     return heroData;
   }
 
+  Future<HeroData> getHero() async {
+    var response = await FirebaseFirestore.instance
+        .collection('hero')
+        .doc('C9yTZA2dQQDUrrrctNeB')
+        .get();
+
+    Map<String, dynamic>? heroData = response.data();
+    return HeroData.fromJson(heroData!);
+  }
+
   @override
   Widget build(BuildContext context) {
-    var hero_1 = HeroData(
-      image: 'image',
-      title: '',
-      subtitle: 'subtitle',
-      buttonText: 'buttonText@',
-    );
-
-    var hero_2 = const HeroData(
-      image: 'image',
-      title: 'title',
-      subtitle: 'subtitle',
-      buttonText: 'buttonText',
-    );
-    print('Is Equal');
-    print(hero_1 == hero_2);
-
     return FutureBuilder(
         initialData: const [],
         future: getHeroData(),

@@ -11,12 +11,10 @@ class HeroData extends Equatable {
     required this.title,
     required this.subtitle,
     required this.buttonText,
-  })  : assert(image != ''),
-        assert(title != ''),
-        assert(subtitle != '');
+  });
 
   HeroData.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
+      : title = json['title'] ?? 'Domantas',
         image = json['image'],
         subtitle = json['subtitle'],
         buttonText = json['buttonText'];
