@@ -7,12 +7,10 @@ import 'package:portfolio_app/features/home/sections/hero/widgets/hero_title.dar
 import 'package:portfolio_app/style/res/constants.dart';
 
 class HeroSectionMobile extends StatelessWidget with BaseMixin {
-
-final Map<String, dynamic> heroData;
+  final Map<String, dynamic> heroData;
 
   const HeroSectionMobile({
     super.key,
-
     required this.heroData,
   });
 
