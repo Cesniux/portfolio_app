@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/features/home/models/hero_data.dart';
 import 'package:portfolio_app/features/home/sections/hero/widgets/hero_button.dart';
 import 'package:portfolio_app/features/home/sections/hero/widgets/hero_photo.dart';
 import 'package:portfolio_app/features/home/sections/hero/widgets/hero_subtitle.dart';
@@ -7,7 +8,7 @@ import 'package:portfolio_app/features/home/sections/hero/widgets/hero_title.dar
 import 'package:portfolio_app/style/res/constants.dart';
 
 class HeroSectionMobile extends StatelessWidget with BaseMixin {
-  final Map<String, dynamic> heroData;
+  final HeroData heroData;
 
   const HeroSectionMobile({
     super.key,
@@ -24,16 +25,16 @@ class HeroSectionMobile extends StatelessWidget with BaseMixin {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           HeroPhoto(
-            imageUrl: heroData['image'],
+            imageUrl: heroData.image,
           ),
           HeroTitle.mobile(
-            title: heroData['title'],
+            title: heroData.title,
           ),
           HeroSubtitle(
-            subtitle: heroData['subtitle'],
+            subtitle: heroData.subtitle,
           ),
           HeroButton(
-            text: heroData['buttonText'],
+            text: heroData.buttonText,
           ),
         ],
       ),

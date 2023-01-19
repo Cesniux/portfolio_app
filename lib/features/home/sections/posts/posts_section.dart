@@ -36,7 +36,7 @@ class PostsSection extends StatelessWidget with BaseMixin {
         ),
       );
     }
-    // print(posts);
+
     return posts;
   }
 

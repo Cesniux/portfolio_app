@@ -37,7 +37,7 @@ class HeroSection extends StatelessWidget with BaseMixin {
   Widget build(BuildContext context) {
     return FutureBuilder(
         initialData: const [],
-        future: getHeroData(),
+        future: getHero(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const CircularProgressIndicator();
@@ -46,21 +46,22 @@ class HeroSection extends StatelessWidget with BaseMixin {
           if (snapshot.error != null) {
             return const Text('Error!');
           }
+          // print(snapshot.data);
           return LayoutBuilder(
             builder: (context, constrains) {
               final screenType = getScreenType(constrains.maxWidth);
               switch (screenType) {
                 case ScreenType.mobile:
                   return HeroSectionMobile(
-                    heroData: snapshot.data as Map<String, dynamic>,
+                    heroData: snapshot.data as HeroData,
                   );
                 case ScreenType.tablet:
                   return HeroSectionTablet(
-                    heroData: snapshot.data as Map<String, dynamic>,
+                    heroData: snapshot.data as HeroData,
                   );
                 case ScreenType.desktop:
                   return HeroSectionDesktop(
-                    heroData: snapshot.data as Map<String, dynamic>,
+                    heroData: snapshot.data as HeroData,
                   );
               }
             },

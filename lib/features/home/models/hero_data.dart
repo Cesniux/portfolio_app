@@ -14,7 +14,7 @@ class HeroData extends Equatable {
   });
 
   HeroData.fromJson(Map<String, dynamic> json)
-      : title = json['title'] ?? 'Domantas',
+      : title = json['title'],
         image = json['image'],
         subtitle = json['subtitle'],
         buttonText = json['buttonText'];
