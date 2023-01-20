@@ -1,6 +1,6 @@
-import 'package:portfolio_app/features/home/models/hero_data.dart';
-import 'package:portfolio_app/features/home/models/post.dart';
-import 'package:portfolio_app/features/home/models/work.dart';
+import 'package:portfolio_app/features/home/models/home_hero.dart';
+import 'package:portfolio_app/features/home/models/home_post.dart';
+import 'package:portfolio_app/features/home/models/home_work.dart';
 import 'package:portfolio_app/features/home/repositories/home_repository.dart';
 import 'package:portfolio_app/service/firebase_service.dart';
 
@@ -9,7 +9,7 @@ class HomeFirebaseRepository implements HomeRepository {
   HomeFirebaseRepository({required this.firebaseService});
 
   @override
-  Future<HeroData> getHero() async {
+  Future<HomeHero> getHero() async {
     // var response = await FirebaseFirestore.instance
     //     .collection('hero')
     //     .doc('C9yTZA2dQQDUrrrctNeB')
@@ -21,12 +21,12 @@ class HomeFirebaseRepository implements HomeRepository {
   }
 
   @override
-  Future<List<Post>> getPosts() {
+  Future<List<HomePost>> getPosts() {
     throw UnimplementedError();
   }
 
   @override
-  Future<List<Work>> getWorks() {
+  Future<List<HomeWork>> getWorks() {
     throw UnimplementedError();
   }
 }

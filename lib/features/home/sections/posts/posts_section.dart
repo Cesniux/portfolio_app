@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
-import 'package:portfolio_app/features/home/models/post.dart';
+import 'package:portfolio_app/features/home/models/home_post.dart';
 import 'package:portfolio_app/features/home/sections/posts/posts_section_desktop.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 
@@ -15,19 +15,19 @@ class PostsSection extends StatelessWidget with BaseMixin {
     required this.sectionTitle,
   }) : super(key: key);
 
-  Future<List<Post>> getPosts() async {
+  Future<List<HomePost>> getPosts() async {
     var response = await FirebaseFirestore.instance
         .collection('posts')
         .orderBy('timeStamp', descending: true)
         .limit(2)
         .get();
-    List<Post> posts = [];
+    List<HomePost> posts = [];
     // print(posts);
 
     for (var element in response.docs) {
       Map<String, dynamic> data = element.data();
       posts.add(
-        Post(
+        HomePost(
           title: data['title'],
           date: data['date'],
           topicKeywords: data['topicKeywords'],
@@ -62,17 +62,17 @@ class PostsSection extends StatelessWidget with BaseMixin {
                 case ScreenType.mobile:
                   return PostsSectionMobile(
                     sectionTitle: sectionTitle,
-                    posts: snapshot.data as List<Post>,
+                    posts: snapshot.data as List<HomePost>,
                   );
                 case ScreenType.tablet:
                   return PostsSectionTablet(
                     sectionTitle: sectionTitle,
-                    posts: snapshot.data as List<Post>,
+                    posts: snapshot.data as List<HomePost>,
                   );
                 case ScreenType.desktop:
                   return PostsSectionDesktop(
                     sectionTitle: sectionTitle,
-                    posts: snapshot.data as List<Post>,
+                    posts: snapshot.data as List<HomePost>,
                   );
               }
             },

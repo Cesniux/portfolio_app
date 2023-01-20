@@ -1,20 +1,20 @@
 import 'package:equatable/equatable.dart';
 
-class Work extends Equatable {
+class HomeWork extends Equatable {
   final String workTitle;
   final String year;
   final String keyword;
   final String description;
   final String imageUrl;
 
-  const Work(
+  const HomeWork(
       {required this.workTitle,
       required this.year,
       required this.keyword,
       required this.description,
       required this.imageUrl});
 
-  Work.fromJson(Map<String, dynamic> json)
+  HomeWork.fromJson(Map<String, dynamic> json)
       : workTitle = json['workTitle'],
         year = json['year'],
         keyword = json['keyword'],
@@ -31,14 +31,14 @@ class Work extends Equatable {
     return data;
   }
 
-  Work copyWith({
+  HomeWork copyWith({
     String? workTitle,
     String? year,
     String? keyword,
     String? description,
     String? imageUrl,
   }) {
-    return Work(
+    return HomeWork(
       description: description ?? this.description,
       imageUrl: imageUrl ?? this.imageUrl,
       keyword: keyword ?? this.keyword,

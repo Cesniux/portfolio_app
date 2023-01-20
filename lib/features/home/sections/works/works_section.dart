@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/features/home/models/work.dart';
+import 'package:portfolio_app/features/home/models/home_work.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
@@ -10,18 +10,18 @@ class WorksSection extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  Future<List<Work>> getWorkData() async {
+  Future<List<HomeWork>> getWorkData() async {
     var response = await FirebaseFirestore.instance
         .collection('works')
         .orderBy('year', descending: true)
         .limit(3)
         .get();
 
-    List<Work> works = [];
+    List<HomeWork> works = [];
 
     for (var element in response.docs) {
       Map<String, dynamic> data = element.data();
-      works.add(Work(
+      works.add(HomeWork(
           workTitle: data['workTitle'],
           year: data['year'],
           keyword: data['keyword'],
@@ -48,7 +48,7 @@ class WorksSection extends StatelessWidget {
           return LayoutBuilder(
             builder: (context, constrains) {
               final screenType = getScreenType(constrains.maxWidth);
-              var snapshotData = snapshot.data as List<Work>;
+              var snapshotData = snapshot.data as List<HomeWork>;
 
               switch (screenType) {
                 case ScreenType.mobile:

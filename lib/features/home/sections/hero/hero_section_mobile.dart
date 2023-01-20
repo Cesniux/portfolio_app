@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
-import 'package:portfolio_app/features/home/models/hero_data.dart';
+import 'package:portfolio_app/features/home/models/home_hero.dart';
 import 'package:portfolio_app/features/home/sections/hero/widgets/hero_button.dart';
 import 'package:portfolio_app/features/home/sections/hero/widgets/hero_photo.dart';
 import 'package:portfolio_app/features/home/sections/hero/widgets/hero_subtitle.dart';
@@ -8,7 +8,7 @@ import 'package:portfolio_app/features/home/sections/hero/widgets/hero_title.dar
 import 'package:portfolio_app/style/res/constants.dart';
 
 class HeroSectionMobile extends StatelessWidget with BaseMixin {
-  final HeroData heroData;
+  final HomeHero heroData;
 
   const HeroSectionMobile({
     super.key,

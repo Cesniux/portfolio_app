@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
-import 'package:portfolio_app/features/home/models/hero_data.dart';
+import 'package:portfolio_app/features/home/models/home_hero.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 
 import 'hero_section_desktop.dart';
@@ -23,14 +23,14 @@ class HeroSection extends StatelessWidget with BaseMixin {
     return heroData;
   }
 
-  Future<HeroData> getHero() async {
+  Future<HomeHero> getHero() async {
     var response = await FirebaseFirestore.instance
         .collection('hero')
         .doc('C9yTZA2dQQDUrrrctNeB')
         .get();
 
     Map<String, dynamic>? heroData = response.data();
-    return HeroData.fromJson(heroData!);
+    return HomeHero.fromJson(heroData!);
   }
 
   @override
@@ -53,15 +53,15 @@ class HeroSection extends StatelessWidget with BaseMixin {
               switch (screenType) {
                 case ScreenType.mobile:
                   return HeroSectionMobile(
-                    heroData: snapshot.data as HeroData,
+                    heroData: snapshot.data as HomeHero,
                   );
                 case ScreenType.tablet:
                   return HeroSectionTablet(
-                    heroData: snapshot.data as HeroData,
+                    heroData: snapshot.data as HomeHero,
                   );
                 case ScreenType.desktop:
                   return HeroSectionDesktop(
-                    heroData: snapshot.data as HeroData,
+                    heroData: snapshot.data as HomeHero,
                   );
               }
             },

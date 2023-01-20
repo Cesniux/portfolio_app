@@ -1,10 +1,10 @@
-import 'package:portfolio_app/features/home/models/post.dart';
-import 'package:portfolio_app/features/home/models/work.dart';
+import 'package:portfolio_app/features/home/models/home_post.dart';
+import 'package:portfolio_app/features/home/models/home_work.dart';
 
-import '../models/hero_data.dart';
+import '../models/home_hero.dart';
 
 abstract class HomeRepository {
-  Future<HeroData> getHero();
-  Future<List<Post>> getPosts();
-  Future<List<Work>> getWorks();
+  Future<HomeHero> getHero();
+  Future<List<HomePost>> getPosts();
+  Future<List<HomeWork>> getWorks();
 }

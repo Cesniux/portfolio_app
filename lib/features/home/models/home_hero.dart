@@ -1,19 +1,19 @@
 import 'package:equatable/equatable.dart';
 
-class HeroData extends Equatable {
+class HomeHero extends Equatable {
   final String image;
   final String title;
   final String subtitle;
   final String buttonText;
 
-  const HeroData({
+  const HomeHero({
     required this.image,
     required this.title,
     required this.subtitle,
     required this.buttonText,
   });
 
-  HeroData.fromJson(Map<String, dynamic> json)
+  HomeHero.fromJson(Map<String, dynamic> json)
       : title = json['title'],
         image = json['image'],
         subtitle = json['subtitle'],
@@ -28,13 +28,13 @@ class HeroData extends Equatable {
     return data;
   }
 
-  HeroData copyWith({
+  HomeHero copyWith({
     String? image,
     String? title,
     String? subtitle,
     String? buttonText,
   }) {
-    return HeroData(
+    return HomeHero(
       image: image ?? this.image,
       title: title ?? this.title,
       buttonText: subtitle ?? this.subtitle,

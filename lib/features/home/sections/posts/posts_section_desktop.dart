@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
-import 'package:portfolio_app/features/home/models/post.dart';
+import 'package:portfolio_app/features/home/models/home_post.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
 class PostsSectionDesktop extends StatelessWidget with BaseMixin {
   final String sectionTitle;
-  final List<Post> posts;
+  final List<HomePost> posts;
 
   const PostsSectionDesktop({
     Key? key,

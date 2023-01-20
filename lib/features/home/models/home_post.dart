@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 
-class Post extends Equatable {
+class HomePost extends Equatable {
   final String title;
   final String date;
   final String topicKeywords;
   final String description;
   final String sectionTitle;
 
-  const Post({
+  const HomePost({
     required this.title,
     required this.date,
     required this.topicKeywords,
@@ -15,7 +15,7 @@ class Post extends Equatable {
     required this.sectionTitle,
   });
 
-  Post.fromJson(Map<String, dynamic> json)
+  HomePost.fromJson(Map<String, dynamic> json)
       : title = json['title'],
         date = json['date'],
         topicKeywords = json['topicKeywords'],
@@ -32,14 +32,14 @@ class Post extends Equatable {
     return data;
   }
 
-  Post copyWith({
+  HomePost copyWith({
     String? title,
     String? date,
     String? topicKeywords,
     String? description,
     String? sectionTitle,
   }) {
-    return Post(
+    return HomePost(
         date: date ?? this.date,
         description: description ?? this.description,
         title: title ?? this.sectionTitle,
