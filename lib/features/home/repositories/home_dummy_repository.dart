@@ -6,7 +6,7 @@ import 'home_repository.dart';
 
 class HomeDummyRepository implements HomeRepository {
   @override
-  Future<HomeHero> getHero() {
+  Future<HomeHero> fetchHeroData() {
     return Future.delayed(
       const Duration(milliseconds: 500),
       () => const HomeHero(

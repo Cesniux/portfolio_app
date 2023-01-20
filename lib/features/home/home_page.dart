@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/features/home/blocs/home_bloc.dart';
-import 'package:portfolio_app/features/home/repositories/home_dummy_repository.dart';
 import 'package:portfolio_app/features/home/repositories/home_firebase_repository.dart';
 import 'package:portfolio_app/service/firebase_service.dart';
 import 'package:portfolio_app/widgets/app_bar/custom_appbar_mobile.dart';
 import 'package:portfolio_app/widgets/simple_drawer/simple_drawer.dart';
 
-import '../../widgets/widgets.dart';
 import 'sections/hero/hero_section.dart';
-import 'widgets/home_page_widgets.dart';
+import 'sections/media/media_section.dart';
+import 'sections/posts/posts_section.dart';
+import 'sections/works/works_section.dart';
 
 class HomeView extends StatelessWidget with BaseMixin {
   const HomeView({super.key});
@@ -22,20 +22,35 @@ class HomeView extends StatelessWidget with BaseMixin {
         homeRepository: HomeFirebaseRepository(
           firebaseService: context.read<FirebaseService>(),
         ),
-        homeOfflineRepository: HomeDummyRepository(),
-      ),
+      )..add(HomeFetch()),
       child: Scaffold(
         appBar: const CustomAppBarMobile(),
         endDrawer: const SimpleDrawer(),
-        body: SingleChildScrollView(
-          child: Column(
-            children: const [
-              HeroSection(),
-              PostsSection(sectionTitle: 'Recent Posts'),
-              WorksSection(),
-              MediaSection(),
-            ],
-          ),
+        body: BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            if (state is HomeLoading || state is HomeInitial) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            } else if (state is HomeSuccess) {
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    HeroSection(
+                      data: state.homeHero,
+                    ),
+                    const PostsSection(sectionTitle: 'Recent Posts'),
+                    const WorksSection(),
+                    const MediaSection(),
+                  ],
+                ),
+              );
+            } else {
+              return const Center(
+                child: Text('Error@!'),
+              );
+            }
+          },
         ),
       ),
     );
