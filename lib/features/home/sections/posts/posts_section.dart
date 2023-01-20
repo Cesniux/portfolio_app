@@ -9,74 +9,61 @@ import 'posts_section_mobile.dart';
 import 'posts_section_tablet.dart';
 
 class PostsSection extends StatelessWidget with BaseMixin {
+  final List<HomePost> data;
   final String sectionTitle;
   const PostsSection({
     Key? key,
-    required this.sectionTitle,
+    required this.sectionTitle, required this.data,
   }) : super(key: key);
 
-  Future<List<HomePost>> getPosts() async {
-    var response = await FirebaseFirestore.instance
-        .collection('posts')
-        .orderBy('timeStamp', descending: true)
-        .limit(2)
-        .get();
-    List<HomePost> posts = [];
-    // print(posts);
+  // Future<List<HomePost>> fetchPostsData() async {
+  //   var response = await FirebaseFirestore.instance
+  //       .collection('posts')
+  //       .orderBy('timeStamp', descending: true)
+  //       .limit(2)
+  //       .get();
+  //   List<HomePost> posts = [];
+  //   // print(posts);
 
-    for (var element in response.docs) {
-      Map<String, dynamic> data = element.data();
-      posts.add(
-        HomePost(
-          title: data['title'],
-          date: data['date'],
-          topicKeywords: data['topicKeywords'],
-          description: data['description'],
-          sectionTitle: data['sectionTitle'],
-        ),
-      );
-    }
+  //   for (var element in response.docs) {
+  //     Map<String, dynamic> data = element.data();
+  //     posts.add(
+  //       HomePost(
+  //         title: data['title'],
+  //         date: data['date'],
+  //         topicKeywords: data['topicKeywords'],
+  //         description: data['description'],
+  //         sectionTitle: data['sectionTitle'],
+  //       ),
+  //     );
+  //   }
 
-    return posts;
-  }
+  //   return posts;
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: getPosts(),
-        initialData: const [],
-        builder: (context, snapshot) {
-          // print(snapshot.connectionState);
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const CircularProgressIndicator();
-          }
-
-          if (snapshot.error != null) {
-            return const Text('Error!');
-          }
-
-          return LayoutBuilder(
-            builder: (context, constrains) {
-              final screenType = getScreenType(constrains.maxWidth);
-              switch (screenType) {
-                case ScreenType.mobile:
-                  return PostsSectionMobile(
-                    sectionTitle: sectionTitle,
-                    posts: snapshot.data as List<HomePost>,
-                  );
-                case ScreenType.tablet:
-                  return PostsSectionTablet(
-                    sectionTitle: sectionTitle,
-                    posts: snapshot.data as List<HomePost>,
-                  );
-                case ScreenType.desktop:
-                  return PostsSectionDesktop(
-                    sectionTitle: sectionTitle,
-                    posts: snapshot.data as List<HomePost>,
-                  );
-              }
-            },
-          );
-        });
+    return LayoutBuilder(
+      builder: (context, constrains) {
+        final screenType = getScreenType(constrains.maxWidth);
+        switch (screenType) {
+          case ScreenType.mobile:
+            return PostsSectionMobile(
+              sectionTitle: sectionTitle,
+              posts: data as List<HomePost>,
+            );
+          case ScreenType.tablet:
+            return PostsSectionTablet(
+              sectionTitle: sectionTitle,
+              posts: data as List<HomePost>,
+            );
+          case ScreenType.desktop:
+            return PostsSectionDesktop(
+              sectionTitle: sectionTitle,
+              posts: data as List<HomePost>,
+            );
+        }
+      },
+    );
   }
 }

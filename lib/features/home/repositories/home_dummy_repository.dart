@@ -19,7 +19,7 @@ class HomeDummyRepository implements HomeRepository {
   }
 
   @override
-  Future<List<HomePost>> getPosts() {
+  Future<List<HomePost>> fetchPostsData() {
     return Future.delayed(
       const Duration(milliseconds: 500),
       () => [],
@@ -27,7 +27,7 @@ class HomeDummyRepository implements HomeRepository {
   }
 
   @override
-  Future<List<HomeWork>> getWorks() {
+  Future<List<HomeWork>> fetchWorksData() {
     return Future.delayed(
       const Duration(milliseconds: 500),
       () => [],

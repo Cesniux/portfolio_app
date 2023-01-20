@@ -8,12 +8,12 @@ class HomeLoading extends HomeState {}
 
 class HomeSuccess extends HomeState {
   final HomeHero homeHero;
-  // final HomePost homePosts;
+  final List<HomePost> homePosts;
   // final HomeWork homeWorks;
 
   HomeSuccess({
     required this.homeHero,
-    // required this.homePosts,
+    required this.homePosts,
     // required this.homeWorks,
   });
 }

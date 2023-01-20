@@ -18,12 +18,31 @@ class HomeFirebaseRepository implements HomeRepository {
   }
 
   @override
-  Future<List<HomePost>> getPosts() {
-    throw UnimplementedError();
+  Future<List<HomePost>> fetchPostsData() async {
+    var response = await firebaseService.postsRef
+        .orderBy('timeStamp', descending: true)
+        .limit(2)
+        .get();
+
+    List<HomePost> posts = [];
+
+    for (var element in response.docs) {
+      Map<String, dynamic> data = element.data() as Map<String, dynamic>;
+      posts.add(
+        HomePost(
+          title: data['title'],
+          date: data['date'],
+          topicKeywords: data['topicKeywords'],
+          description: data['description'],
+          sectionTitle: data['sectionTitle'],
+        ),
+      );
+    }
+    return posts;
   }
 
   @override
-  Future<List<HomeWork>> getWorks() {
+  Future<List<HomeWork>> fetchWorksData() {
     throw UnimplementedError();
   }
 }
