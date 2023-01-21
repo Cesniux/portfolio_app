@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 
@@ -21,11 +22,11 @@ class HeroPhoto extends StatelessWidget {
           )
         ]),
         child: ClipOval(
-            child: Image.network(
-          'https://firebasestorage.googleapis.com/v0/b/portfolio-app-6c932.appspot.com/o/profile_image.jpeg?alt=media&token=a56f365d-4067-4a67-836f-305301cc0145',
+            child: CachedNetworkImage(
           width: 180,
           height: 180,
           fit: BoxFit.cover,
+          imageUrl: imageUrl,
         )),
       ),
     );

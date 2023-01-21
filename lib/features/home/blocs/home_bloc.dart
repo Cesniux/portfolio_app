@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+
 import 'package:portfolio_app/features/home/models/home_hero.dart';
 import 'package:portfolio_app/features/home/models/home_post.dart';
 import 'package:portfolio_app/features/home/models/home_work.dart';
@@ -27,6 +28,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     var heroData = results[0];
     var postData = results[1];
     var workData = results[2];
+
     emit(HomeSuccess(
         homeHero: heroData, homePosts: postData, homeWorks: workData));
   }
