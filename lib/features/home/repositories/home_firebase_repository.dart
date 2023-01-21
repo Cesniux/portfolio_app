@@ -28,21 +28,31 @@ class HomeFirebaseRepository implements HomeRepository {
 
     for (var element in response.docs) {
       Map<String, dynamic> data = element.data() as Map<String, dynamic>;
-      posts.add(
-        HomePost(
-          title: data['title'],
-          date: data['date'],
-          topicKeywords: data['topicKeywords'],
-          description: data['description'],
-          sectionTitle: data['sectionTitle'],
-        ),
-      );
+      posts.add(HomePost.fromJson(data)
+          // title: data['title'],
+          // date: data['date'],
+          // topicKeywords: data['topicKeywords'],
+          // description: data['description'],
+          // sectionTitle: data['sectionTitle'],
+
+          );
     }
     return posts;
   }
 
   @override
-  Future<List<HomeWork>> fetchWorksData() {
-    throw UnimplementedError();
+  Future<List<HomeWork>> fetchWorksData() async {
+    var response = await firebaseService.worksRef
+        .orderBy('year', descending: true)
+        .limit(3)
+        .get();
+
+    List<HomeWork> works = [];
+
+    for (var element in response.docs) {
+      Map<String, dynamic> data = element.data() as Map<String, dynamic>;
+      works.add(HomeWork.fromJson(data));
+    }
+    return works;
   }
 }

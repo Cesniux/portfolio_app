@@ -43,7 +43,7 @@ class HomeView extends StatelessWidget with BaseMixin {
                       sectionTitle: 'Recent Posts',
                       data: state.homePosts,
                     ),
-                    const WorksSection(),
+                     WorksSection(data: state.homeWorks),
                     const MediaSection(),
                   ],
                 ),
