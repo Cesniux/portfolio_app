@@ -15,31 +15,48 @@ class CustomAppBarDesktop extends StatelessWidget
       elevation: 0,
       actions: [
         SizedBox(
-          width: getMaxWidth(context) * 0.7,
+          width: getMaxWidth(context) * 0.67,
         ),
         Expanded(
-          child: TabBar(
-            indicatorSize: TabBarIndicatorSize.label,
-            // overlayColor: ,
-            // isScrollable: true,
-            padding: EdgeInsets.zero,
-            indicatorPadding: EdgeInsets.zero,
-            labelPadding: EdgeInsets.zero,
-            indicatorWeight: 3,
-            labelColor: CColor.buttonColor,
-            unselectedLabelColor: CColor.blueTextcolor,
-            indicatorColor: CColor.textColor.withOpacity(0),
-
-            tabs: const [
-              Tab(text: 'Home'),
-              Tab(
-                text: 'Blog',
-              ),
-              Tab(text: 'Works'),
-              Tab(text: 'Contact'),
-            ],
+          child: Theme(
+            data: ThemeData().copyWith(
+                hoverColor: CColor.backgroundColorDifferent.withOpacity(1),
+                splashColor: CColor.backgroundColorDifferent.withOpacity(1)),
+            child: TabBar(
+              isScrollable: true,
+              indicatorSize: TabBarIndicatorSize.label,
+              padding: EdgeInsets.zero,
+              indicatorPadding: EdgeInsets.zero,
+              labelPadding: EdgeInsets.symmetric(
+                  horizontal: getMaxWidth(context) * 0.013),
+              indicatorWeight: 3,
+              labelColor: CColor.buttonColor,
+              labelStyle: TextStyle(
+                  color: CColor.blueTextcolor,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1.3),
+              unselectedLabelColor: CColor.blueTextcolor,
+              indicatorColor: CColor.textColor.withOpacity(0),
+              splashBorderRadius: BorderRadius.circular(30),
+              tabs: const [
+                Tab(
+                  text: 'Home',
+                ),
+                Tab(
+                  text: 'Blog',
+                ),
+                Tab(text: 'Works'),
+                Tab(
+                  text: 'Contact',
+                ),
+              ],
+            ),
           ),
-        )
+        ),
+        // SizedBox(
+        //   width: getMaxWidth(context) * 0.01,
+        // ),
       ],
 
       // Padding(
