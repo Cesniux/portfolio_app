@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/utils/screen_sizes.dart';
+import 'package:portfolio_app/widgets/app_bar/custom_appbar_desktop.dart';
+import 'package:portfolio_app/widgets/app_bar/custom_appbar_mobile.dart';
+import 'package:portfolio_app/widgets/app_bar/custom_appbar_tablet.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   const CustomAppBar({
@@ -7,21 +11,17 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-
-    return AppBar(
-      
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      actions: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-          child: IconButton(
-              onPressed: () {},
-              icon: Image.asset('assets/icons/icons_1x/menu_icon.png')),
-        )
-      ],
-    );
+    return LayoutBuilder(builder: (context, constrains) {
+      final screenType = getScreenType(constrains.maxWidth);
+      switch (screenType) {
+        case ScreenType.mobile:
+          return const CustomAppBarMobile();
+        case ScreenType.tablet:
+          return const CustomAppBarTablet();
+        case ScreenType.desktop:
+          return const CustomAppBarDesktop();
+      }
+    });
   }
 
   @override
