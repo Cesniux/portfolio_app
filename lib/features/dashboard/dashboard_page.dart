@@ -11,8 +11,8 @@ import 'package:portfolio_app/service/firebase_service.dart';
 import 'package:portfolio_app/widgets/app_bar/custom_appbar.dart';
 import 'package:portfolio_app/widgets/simple_drawer/simple_drawer.dart';
 
-class HomePage extends StatelessWidget with BaseMixin {
-  const HomePage({super.key});
+class DashboardPage extends StatelessWidget with BaseMixin {
+  const DashboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {

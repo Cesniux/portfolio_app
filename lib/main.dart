@@ -6,7 +6,7 @@ import 'package:portfolio_app/service/firebase_service.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/style/theme/text_theme.dart';
 
-import 'features/home_page.dart';
+import 'features/dashboard/dashboard_page.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -41,7 +41,7 @@ class App extends StatelessWidget {
           primarySwatch: Colors.blue,
           scaffoldBackgroundColor: CColor.white,
         ),
-        home: const HomePage(),
+        home: const DashboardPage(),
       ),
     );
   }
