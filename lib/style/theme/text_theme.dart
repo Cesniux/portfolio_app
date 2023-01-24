@@ -5,7 +5,7 @@ import '../res/constants.dart';
 TextTheme textTheme = TextTheme(
   headlineLarge: TextStyle(
       color: CColor.textColor,
-      fontSize: 32,
+      fontSize: 40,
       height: 1.25,
       fontWeight: FontWeight.w700),
   bodyMedium: const TextStyle(
@@ -25,7 +25,7 @@ TextTheme textTheme = TextTheme(
   ),
   titleMedium: TextStyle(
       color: CColor.textColor,
-      fontSize: 22,
+      fontSize: 26,
       fontWeight: FontWeight.w700,
       height: 1.35),
   labelSmall: TextStyle(

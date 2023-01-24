@@ -25,11 +25,12 @@ class PostsSectionTablet extends StatelessWidget {
               text: sectionTitle,
             ),
             ...posts.map(
-              (post) => SimplePostBox.tablet(
+              (post) => HomePostBox.tablet(
                 title: post.title,
                 date: post.date,
                 description: post.description,
                 topicKeywords: post.topicKeywords,
+                isInBlogView: false,
               ),
             ),
           ],

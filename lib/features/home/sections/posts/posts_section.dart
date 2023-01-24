@@ -13,7 +13,8 @@ class PostsSection extends StatelessWidget with BaseMixin {
   final String sectionTitle;
   const PostsSection({
     Key? key,
-    required this.sectionTitle, required this.data,
+    required this.sectionTitle,
+    required this.data,
   }) : super(key: key);
 
   // Future<List<HomePost>> fetchPostsData() async {
@@ -50,17 +51,17 @@ class PostsSection extends StatelessWidget with BaseMixin {
           case ScreenType.mobile:
             return PostsSectionMobile(
               sectionTitle: sectionTitle,
-              posts: data as List<HomePost>,
+              posts: data,
             );
           case ScreenType.tablet:
             return PostsSectionTablet(
               sectionTitle: sectionTitle,
-              posts: data as List<HomePost>,
+              posts: data,
             );
           case ScreenType.desktop:
             return PostsSectionDesktop(
               sectionTitle: sectionTitle,
-              posts: data as List<HomePost>,
+              posts: data,
             );
         }
       },

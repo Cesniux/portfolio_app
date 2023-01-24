@@ -18,7 +18,7 @@ class HeroSectionDesktop extends StatelessWidget with BaseMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: getMaxHeight(context) < 550 ? null : getMaxHeight(context) * 0.9,
+      // height: getMaxHeight(context) < 550 ? null : getMaxHeight(context) * 0.9,
       color: CColor.white,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 148),
@@ -40,6 +40,9 @@ class HeroSectionDesktop extends StatelessWidget with BaseMixin {
             HeroButton(
               text: heroData.buttonText,
             ),
+            SizedBox(
+              height: getMaxWidth(context) * 0.05,
+            )
           ],
         ),
       ),

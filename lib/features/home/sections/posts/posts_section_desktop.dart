@@ -43,7 +43,8 @@ class PostsSectionDesktop extends StatelessWidget with BaseMixin {
                 children: [
                   ...posts.map((post) {
                     return Expanded(
-                      child: SimplePostBox.desktop(
+                      child: HomePostBox.desktop(
+                          isInBlogView: false,
                           title: post.title,
                           date: post.date,
                           topicKeywords: post.topicKeywords,

@@ -1,11 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/features/home/models/home_work.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 import 'package:portfolio_app/widgets/widgets.dart';
 
-class WorksSection extends StatelessWidget {
+class WorksSection extends StatelessWidget with BaseMixin {
   final List<HomeWork> data;
   const WorksSection({
     Key? key,
@@ -98,7 +98,8 @@ class WorksSection extends StatelessWidget {
           case ScreenType.desktop:
             return Container(
               color: CColor.white,
-              padding: const EdgeInsets.symmetric(horizontal: 148),
+              padding: EdgeInsets.symmetric(
+                  horizontal: getMaxWidth(context) * 0.1 + 10),
               child: Column(
                 children: [
                   const SimpleSmallTitleText(
