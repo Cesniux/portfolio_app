@@ -34,7 +34,7 @@ class HeroSectionTablet extends StatelessWidget with BaseMixin {
             padding:
                 EdgeInsets.symmetric(horizontal: getMaxWidth(context) * 0.1),
             child: HeroSubtitle(
-              subtitle: heroData.image,
+              subtitle: heroData.subtitle,
             ),
           ),
           HeroButton(

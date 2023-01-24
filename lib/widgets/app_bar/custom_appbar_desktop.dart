@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/style/res/constants.dart';
+import 'package:portfolio_app/style/theme/text_theme.dart';
 
 class CustomAppBarDesktop extends StatelessWidget
     with PreferredSizeWidget, BaseMixin {
@@ -14,49 +15,43 @@ class CustomAppBarDesktop extends StatelessWidget
       backgroundColor: Colors.transparent,
       elevation: 0,
       actions: [
-        SizedBox(
-          width: getMaxWidth(context) * 0.67,
-        ),
-        Expanded(
-          child: Theme(
-            data: ThemeData().copyWith(
-                hoverColor: CColor.backgroundColorDifferent.withOpacity(1),
-                splashColor: CColor.backgroundColorDifferent.withOpacity(1)),
-            child: TabBar(
-              isScrollable: true,
-              indicatorSize: TabBarIndicatorSize.label,
-              padding: EdgeInsets.zero,
-              indicatorPadding: EdgeInsets.zero,
-              labelPadding: EdgeInsets.symmetric(
-                  horizontal: getMaxWidth(context) * 0.013),
-              indicatorWeight: 3,
-              labelColor: CColor.buttonColor,
-              labelStyle: TextStyle(
-                  color: CColor.blueTextcolor,
-                  fontSize: 17,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1.3),
-              unselectedLabelColor: CColor.blueTextcolor,
-              indicatorColor: CColor.textColor.withOpacity(0),
-              splashBorderRadius: BorderRadius.circular(30),
-              tabs: const [
-                Tab(
-                  text: 'Home',
-                ),
-                Tab(
-                  text: 'Blog',
-                ),
-                Tab(text: 'Works'),
-                Tab(
-                  text: 'Contact',
-                ),
-              ],
-            ),
+        // SizedBox(
+        //   width: getMaxWidth(context) * 0.67,
+        // ),
+        Theme(
+          data: ThemeData().copyWith(
+              hoverColor: CColor.backgroundColorDifferent.withOpacity(1),
+              splashColor: CColor.backgroundColorDifferent.withOpacity(1)),
+          child: TabBar(
+            isScrollable: true,
+            indicatorSize: TabBarIndicatorSize.label,
+            padding: EdgeInsets.zero,
+            indicatorPadding: EdgeInsets.zero,
+            labelPadding:
+                EdgeInsets.symmetric(horizontal: getMaxWidth(context) * 0.013),
+            indicatorWeight: 3,
+            labelColor: CColor.buttonColor,
+            labelStyle: textTheme.labelLarge,
+            unselectedLabelColor: CColor.blueTextcolor,
+            indicatorColor: CColor.textColor.withOpacity(0),
+            splashBorderRadius: BorderRadius.circular(30),
+            tabs: const [
+              Tab(
+                text: 'Home',
+              ),
+              Tab(
+                text: 'Blog',
+              ),
+              Tab(text: 'Works'),
+              Tab(
+                text: 'Contact',
+              ),
+            ],
           ),
         ),
-        // SizedBox(
-        //   width: getMaxWidth(context) * 0.01,
-        // ),
+        const SizedBox(
+          width: 20,
+        ),
       ],
 
       // Padding(
