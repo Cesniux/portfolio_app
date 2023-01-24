@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 
-class CustomButton extends StatelessWidget with BaseExtension {
+class HeroButton extends StatelessWidget with BaseMixin {
   final String text;
-  const CustomButton({Key? key, this.text = 'Button'}) : super(key: key);
+  const HeroButton({Key? key, this.text = 'Button'}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

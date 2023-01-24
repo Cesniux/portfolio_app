@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 
-class ShortParagraphText extends StatelessWidget with BaseExtension {
+class ShortParagraphText extends StatelessWidget with BaseMixin {
   final String text;
   const ShortParagraphText({
     Key? key, required this.text,

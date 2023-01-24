@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 
-class HeroMainText extends StatelessWidget with BaseExtension {
-  const HeroMainText({
+class HeroSubtitle extends StatelessWidget with BaseMixin {
+  final String subtitle;
+  const HeroSubtitle({
     Key? key,
+    required this.subtitle,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 31),
+      padding: const EdgeInsets.symmetric(horizontal: 31, vertical: 21),
       child: Text(
-        'Hi, I am Domantas, Creative Technologist',
+        subtitle,
         textAlign: TextAlign.center,
-        style: getTextTheme(context).headlineLarge,
+        style: getTextTheme(context).bodyMedium,
       ),
     );
   }

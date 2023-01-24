@@ -1,9 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 
-class ProfilePhotoWidget extends StatelessWidget {
-  const ProfilePhotoWidget({
+class HeroPhoto extends StatelessWidget {
+  final String imageUrl;
+  const HeroPhoto({
     Key? key,
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -19,11 +22,11 @@ class ProfilePhotoWidget extends StatelessWidget {
           )
         ]),
         child: ClipOval(
-            child: Image.asset(
-          'assets/images/profile_image.jpeg',
+            child: CachedNetworkImage(
           width: 180,
           height: 180,
           fit: BoxFit.cover,
+          imageUrl: imageUrl,
         )),
       ),
     );

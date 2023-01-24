@@ -15,7 +15,7 @@ TextTheme textTheme = TextTheme(
   ),
   labelMedium: TextStyle(
       fontSize: 20,
-      color: CColor.buttonTextColor,
+      color: CColor.white,
       fontWeight: FontWeight.w500,
       height: 1.45),
   titleSmall: TextStyle(
@@ -31,7 +31,7 @@ TextTheme textTheme = TextTheme(
   labelSmall: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w800,
-      color: CColor.buttonTextColor,
+      color: CColor.white,
       height: 1.6,
       letterSpacing: 0.1),
 );

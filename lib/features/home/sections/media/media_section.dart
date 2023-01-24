@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 
-class SocialMediaCopyrightBox extends StatelessWidget with BaseExtension {
-  const SocialMediaCopyrightBox({
+class MediaSection extends StatelessWidget with BaseMixin {
+  const MediaSection({
     Key? key,
   }) : super(key: key);
 
@@ -14,7 +14,7 @@ class SocialMediaCopyrightBox extends StatelessWidget with BaseExtension {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Material(
-            color: CColor.backgroundColorBright,
+            color: CColor.white,
             child: SizedBox(
               width: 310,
               height: 70,
@@ -60,7 +60,7 @@ class SocialMediaCopyrightBox extends StatelessWidget with BaseExtension {
           ),
         ),
         Text(
-          'Copyright ©2020 All rights reserved',
+          'Copyright ©2023 All rights reserved',
           style: getTextTheme(context).bodyMedium!.copyWith(fontSize: 14),
         ),
         const SizedBox(
