@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/features/blog/widgets/blog_post_box.dart';
-import 'package:portfolio_app/style/theme/text_theme.dart';
 import 'package:portfolio_app/widgets/media/media_section.dart';
+import 'package:portfolio_app/style/theme/text_theme.dart';
 
 class BlogSection extends StatelessWidget with BaseMixin {
   final double horizontalPaddingMultiplier;
