@@ -30,14 +30,14 @@ TextTheme textTheme = TextTheme(
       fontWeight: FontWeight.w600,
       height: 1.35),
   labelSmall: TextStyle(
-      fontSize: 16.sp,
+      fontSize: 16,
       fontWeight: FontWeight.w800,
       color: CColor.white,
       height: 1.6,
       letterSpacing: 0.1),
   labelLarge: TextStyle(
       color: CColor.blueTextcolor,
-      fontSize: 17.sp,
+      fontSize: 16.sp,
       fontWeight: FontWeight.w600,
       letterSpacing: 1.3),
   displayMedium: TextStyle(

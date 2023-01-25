@@ -31,7 +31,7 @@ class BlogSection extends StatelessWidget with BaseMixin {
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(top: 70, bottom: 40, left: 27),
+                padding: const EdgeInsets.only(top: 100, bottom: 56, left: 27),
                 child: Text(
                   'Blog',
                   style: textTheme.headlineLarge,
