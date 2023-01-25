@@ -17,31 +17,6 @@ class PostsSection extends StatelessWidget with BaseMixin {
     required this.data,
   }) : super(key: key);
 
-  // Future<List<HomePost>> fetchPostsData() async {
-  //   var response = await FirebaseFirestore.instance
-  //       .collection('posts')
-  //       .orderBy('timeStamp', descending: true)
-  //       .limit(2)
-  //       .get();
-  //   List<HomePost> posts = [];
-  //   // print(posts);
-
-  //   for (var element in response.docs) {
-  //     Map<String, dynamic> data = element.data();
-  //     posts.add(
-  //       HomePost(
-  //         title: data['title'],
-  //         date: data['date'],
-  //         topicKeywords: data['topicKeywords'],
-  //         description: data['description'],
-  //         sectionTitle: data['sectionTitle'],
-  //       ),
-  //     );
-  //   }
-
-  //   return posts;
-  // }
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
