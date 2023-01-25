@@ -16,7 +16,7 @@ class SimpleSmallTitleText extends StatelessWidget with BaseMixin {
       padding: EdgeInsets.only(top: 21, bottom: bottomPadding),
       child: Text(
         text,
-        style: getTextTheme(context).titleSmall,
+        style: getTextTheme(context).displayMedium,
       ),
     );
   }

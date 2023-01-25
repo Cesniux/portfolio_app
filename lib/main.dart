@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_app/features/home/repositories/home_dummy_repository.dart';
 import 'package:portfolio_app/service/firebase_service.dart';
 import 'package:portfolio_app/style/res/constants.dart';
@@ -32,17 +33,23 @@ class App extends StatelessWidget {
           create: (context) => HomeDummyRepository(),
         ),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          fontFamily: 'Heebo',
-          textTheme: textTheme,
-          primarySwatch: Colors.blue,
-          scaffoldBackgroundColor: CColor.white,
-        ),
-        home: const DashboardPage(),
-      ),
+      child: ScreenUtilInit(
+          // minTextAdapt: true,
+          designSize: const Size(360, 690),
+          minTextAdapt: true,
+          builder: (context, child) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'Flutter Demo',
+              theme: ThemeData(
+                fontFamily: 'Heebo',
+                textTheme: textTheme,
+                primarySwatch: Colors.blue,
+                scaffoldBackgroundColor: CColor.white,
+              ),
+              home: const DashboardPage(),
+            );
+          }),
     );
   }
 }

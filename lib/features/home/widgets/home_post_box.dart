@@ -64,7 +64,7 @@ class HomePostBox extends StatelessWidget with BaseMixin {
               style: getTextTheme(context).titleMedium,
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 12, bottom: 22),
+              padding: const EdgeInsets.only(top: 6, bottom: 20),
               child: IntrinsicHeight(
                 child: Row(
                   children: [
