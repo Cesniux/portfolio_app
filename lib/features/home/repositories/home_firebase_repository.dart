@@ -29,12 +29,6 @@ class HomeFirebaseRepository implements HomeRepository {
     for (var element in response.docs) {
       Map<String, dynamic> data = element.data() as Map<String, dynamic>;
       posts.add(HomePost.fromJson(data)
-          // title: data['title'],
-          // date: data['date'],
-          // topicKeywords: data['topicKeywords'],
-          // description: data['description'],
-          // sectionTitle: data['sectionTitle'],
-
           );
     }
     return posts;

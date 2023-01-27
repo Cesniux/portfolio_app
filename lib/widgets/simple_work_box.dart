@@ -4,14 +4,14 @@ import 'package:portfolio_app/features/home/widgets/home_page_widgets.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 
-class WorkBoxWidget extends StatelessWidget with BaseMixin {
+class SimpleWorkBox extends StatelessWidget with BaseMixin {
   final String workTitle;
   final String year;
   final String keyword;
   final String description;
   final String imageUrl;
 
-  const WorkBoxWidget({
+  const SimpleWorkBox({
     Key? key,
     required this.workTitle,
     required this.year,
@@ -25,6 +25,7 @@ class WorkBoxWidget extends StatelessWidget with BaseMixin {
     return LayoutBuilder(
       builder: (context, constrains) {
         final screenType = getScreenType(constrains.maxWidth * 1.5);
+
         switch (screenType) {
           case ScreenType.mobile:
             return Column(
@@ -57,8 +58,8 @@ class WorkBoxWidget extends StatelessWidget with BaseMixin {
                     description: description),
                 Divider(
                   color: CColor.dividerGreycolor,
-                  height: 34,
-                  thickness: 1.5,
+                  height: 40,
+                  thickness: 1.8,
                 )
               ],
             );
@@ -67,7 +68,8 @@ class WorkBoxWidget extends StatelessWidget with BaseMixin {
               children: [
                 Row(
                   children: [
-                    Expanded(
+                    Flexible(
+                      flex: (getMaxWidth(context) > 900) ? 2 : 3,
                       child: WorkBoxImage(
                         imageUrl: imageUrl,
                       ),
@@ -75,7 +77,8 @@ class WorkBoxWidget extends StatelessWidget with BaseMixin {
                     const SizedBox(
                       width: 16,
                     ),
-                    Expanded(
+                    Flexible(
+                      flex: 5,
                       child: WorkBoxTextPart(
                           workTitle: workTitle,
                           year: year,
@@ -91,7 +94,7 @@ class WorkBoxWidget extends StatelessWidget with BaseMixin {
                 ),
                 Divider(
                   color: CColor.dividerGreycolor,
-                  height: 50,
+                  height: 80,
                   thickness: 1.5,
                 )
               ],

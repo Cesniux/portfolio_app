@@ -52,10 +52,9 @@ class WorkBoxTextPart extends StatelessWidget with BaseMixin {
               ),
               Text(
                 keyword,
-                style: TextStyle(
-                  color: CColor.labelColor,
-                  fontSize: 16,
-                ),
+                style: getTextTheme(context)
+                    .titleSmall
+                    ?.copyWith(color: CColor.labelColor),
               )
             ],
           ),

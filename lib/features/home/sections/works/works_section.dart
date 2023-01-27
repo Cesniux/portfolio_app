@@ -55,7 +55,7 @@ class WorksSection extends StatelessWidget with BaseMixin {
                   ),
                   Column(
                     children: [
-                      ...snapshotData.map((work) => WorkBoxWidget(
+                      ...snapshotData.map((work) => SimpleWorkBox(
                           workTitle: work.workTitle,
                           year: work.year,
                           keyword: work.keyword,
@@ -81,7 +81,7 @@ class WorksSection extends StatelessWidget with BaseMixin {
                   ),
                   Column(
                     children: [
-                      ...snapshotData.map((work) => WorkBoxWidget(
+                      ...snapshotData.map((work) => SimpleWorkBox(
                           workTitle: work.workTitle,
                           year: work.year,
                           keyword: work.keyword,
@@ -108,7 +108,7 @@ class WorksSection extends StatelessWidget with BaseMixin {
                   ),
                   Column(
                     children: [
-                      ...snapshotData.map((work) => WorkBoxWidget(
+                      ...snapshotData.map((work) => SimpleWorkBox(
                           workTitle: work.workTitle,
                           year: work.year,
                           keyword: work.keyword,

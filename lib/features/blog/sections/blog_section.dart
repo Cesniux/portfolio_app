@@ -34,7 +34,7 @@ class BlogSection extends StatelessWidget with BaseMixin {
                 padding: const EdgeInsets.only(top: 100, bottom: 56, left: 27),
                 child: Text(
                   'Blog',
-                  style: textTheme.headlineLarge,
+                  style: getTextTheme(context).headlineLarge,
                 ),
               ),
             ),
