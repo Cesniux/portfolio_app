@@ -39,7 +39,7 @@ class SimpleWorkBox extends StatelessWidget with BaseMixin {
                     keyword: keyword,
                     description: description),
                 Divider(
-                  color: CColor.dividerGreycolor,
+                  color: CColor.textColor.withOpacity(0.3),
                   height: 34,
                   thickness: 1.5,
                 )
@@ -57,7 +57,7 @@ class SimpleWorkBox extends StatelessWidget with BaseMixin {
                     keyword: keyword,
                     description: description),
                 Divider(
-                  color: CColor.dividerGreycolor,
+                  color: CColor.textColor.withOpacity(0.3),
                   height: 40,
                   thickness: 1.8,
                 )

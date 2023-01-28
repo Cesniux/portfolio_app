@@ -28,7 +28,7 @@ class WorksSection extends StatelessWidget with BaseMixin {
 
   const WorksSection.mobile({
     Key? key,
-    this.horizontalPaddingMultiplier = 0.0,
+    this.horizontalPaddingMultiplier = 0.07,
   }) : super(key: key);
   const WorksSection.tablet({
     Key? key,
