@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/features/blog/widgets/blog_post_box.dart';
 import 'package:portfolio_app/widgets/media/media_section.dart';
-import 'package:portfolio_app/style/theme/text_theme.dart';
 
 class BlogSection extends StatelessWidget with BaseMixin {
   final double horizontalPaddingMultiplier;
 
   const BlogSection.mobile({
     Key? key,
-    this.horizontalPaddingMultiplier = 0.0,
+    this.horizontalPaddingMultiplier = 0.01,
   }) : super(key: key);
   const BlogSection.tablet({
     Key? key,
@@ -31,7 +30,8 @@ class BlogSection extends StatelessWidget with BaseMixin {
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(top: 100, bottom: 56, left: 27),
+                padding: EdgeInsets.only(
+                    top: getMaxHeight(context) * 0.1, bottom: 56, left: 27),
                 child: Text(
                   'Blog',
                   style: getTextTheme(context).headlineLarge,

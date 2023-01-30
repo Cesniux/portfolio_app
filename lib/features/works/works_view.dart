@@ -22,7 +22,9 @@ class WorksView extends StatelessWidget with BaseMixin {
             if (state is WorksLoaded) {
               switch (screenType) {
                 case ScreenType.mobile:
-                  return WorksSection.mobile(worksList: state.worksList);
+                  return WorksSection.mobile(
+                    worksList: state.worksList,
+                  );
                 case ScreenType.tablet:
                   return WorksSection.tablet(
                     worksList: state.worksList,

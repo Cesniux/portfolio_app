@@ -15,6 +15,7 @@ class WorksBloc extends Bloc<WorksEvent, WorksState> {
 Future<void> _onWorksFetch(WorksEvent event, Emitter<WorksState> emit) async {
   emit(WorksLoading());
   List<WorksWork> worksList = [];
+
   final future = await FirebaseFirestore.instance
       .collection('works')
       .orderBy('year', descending: true)

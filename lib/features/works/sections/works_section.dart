@@ -35,7 +35,8 @@ class WorksSection extends StatelessWidget with BaseMixin {
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(top: 100, bottom: 56, left: 0),
+                padding: EdgeInsets.only(
+                    top: getMaxHeight(context) * 0.1, bottom: 56, left: 0),
                 child: Text(
                   'Works',
                   style: getTextTheme(context).headlineLarge,
