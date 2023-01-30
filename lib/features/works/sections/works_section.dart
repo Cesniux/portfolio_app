@@ -50,42 +50,6 @@ class WorksSection extends StatelessWidget with BaseMixin {
                   description: work.description,
                   imageUrl: work.imageUrl,
                 )),
-            // const SimpleWorkBox(
-            //   description:
-            //       'baba yaga, cmon cmon, hehe, there is something on my mind, baby you will see how it\'s gonna be, but don\' let the bees out, they will sting you very hard. I will always eat junk food, but then my body will thank',
-            //   year: '2024',
-            //   keyword: 'Trafford',
-            //   workTitle: 'Setting The Sun',
-            //   imageUrl:
-            //       'https://firebasestorage.googleapis.com/v0/b/portfolio-app-6c932.appspot.com/o/workImages%2Fwork_3_image.png?alt=media&token=4bb2501a-dc62-4f5d-a741-334debc36352',
-            // ),
-            // const SimpleWorkBox(
-            //   description:
-            //       'baba yaga, cmon cmon, hehe, there is something on my mind, baby you will see how it\'s gonna be, but don\' let the bees out, they will sting you very hard. I will always eat junk food, but then my body will thank',
-            //   year: '2024',
-            //   keyword: 'Trafford',
-            //   workTitle: 'Setting The Sun',
-            //   imageUrl:
-            //       'https://firebasestorage.googleapis.com/v0/b/portfolio-app-6c932.appspot.com/o/workImages%2Fwork_3_image.png?alt=media&token=4bb2501a-dc62-4f5d-a741-334debc36352',
-            // ),
-            // const SimpleWorkBox(
-            //   description:
-            //       'baba yaga, cmon cmon, hehe, there is something on my mind, baby you will see how it\'s gonna be, but don\' let the bees out, they will sting you very hard. I will always eat junk food, but then my body will thank',
-            //   year: '2024',
-            //   keyword: 'Trafford',
-            //   workTitle: 'Setting The Sun',
-            //   imageUrl:
-            //       'https://firebasestorage.googleapis.com/v0/b/portfolio-app-6c932.appspot.com/o/workImages%2Fwork_3_image.png?alt=media&token=4bb2501a-dc62-4f5d-a741-334debc36352',
-            // ),
-            // const SimpleWorkBox(
-            //   description:
-            //       'baba yaga, cmon cmon, hehe, there is something on my mind, baby you will see how it\'s gonna be, but don\' let the bees out, they will sting you very hard. I will always eat junk food, but then my body will thank',
-            //   year: '2024',
-            //   keyword: 'Trafford',
-            //   workTitle: 'Setting The Sun',
-            //   imageUrl:
-            //       'https://firebasestorage.googleapis.com/v0/b/portfolio-app-6c932.appspot.com/o/workImages%2Fwork_3_image.png?alt=media&token=4bb2501a-dc62-4f5d-a741-334debc36352',
-            // ),
             const SizedBox(
               height: 50,
             ),
