@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_app/base_extension.dart';
 import 'package:portfolio_app/features/works/bloc/works_bloc.dart';
+import 'package:portfolio_app/features/works/repositories/works_firebase_repository.dart';
 import 'package:portfolio_app/features/works/sections/works_section.dart';
+import 'package:portfolio_app/service/firebase_service.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 
 class WorksView extends StatelessWidget with BaseMixin {
@@ -11,7 +13,11 @@ class WorksView extends StatelessWidget with BaseMixin {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => WorksBloc()..add(WorksFetch()),
+      create: (context) => WorksBloc(
+        worksFirebaseRepository: WorksFirebaseRepository(
+          firebaseService: context.read<FirebaseService>(),
+        ),
+      )..add(WorksFetch()),
       child: BlocBuilder<WorksBloc, WorksState>(
         builder: (context, state) {
           return LayoutBuilder(builder: (context, constrains) {

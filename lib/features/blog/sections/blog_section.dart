@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/features/blog/models/blog_post.dart';
 import 'package:portfolio_app/features/blog/widgets/blog_post_box.dart';
 import 'package:portfolio_app/widgets/media/media_section.dart';
 
 class BlogSection extends StatelessWidget with BaseMixin {
   final double horizontalPaddingMultiplier;
+  final List<BlogPost> postList;
 
   const BlogSection.mobile({
     Key? key,
     this.horizontalPaddingMultiplier = 0.01,
+    required this.postList,
   }) : super(key: key);
   const BlogSection.tablet({
     Key? key,
     this.horizontalPaddingMultiplier = 0.1,
+    required this.postList,
   }) : super(key: key);
   const BlogSection.desktop({
     Key? key,
     this.horizontalPaddingMultiplier = 0.15,
+    required this.postList,
   }) : super(key: key);
 
   @override
@@ -38,33 +43,12 @@ class BlogSection extends StatelessWidget with BaseMixin {
                 ),
               ),
             ),
-            const BlogPostBox(
-              title: 'Very Good',
-              date: '22 Jan 2023',
-              topicKeywords: 'Snowboard, Swimming',
-              description:
-                  'Amet minim Amet minim Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam conamet.mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-            ),
-            const BlogPostBox(
-              title: 'Very Good',
-              date: '22 Jan 2023',
-              topicKeywords: 'Snowboard, Swimming',
-              description:
-                  'Amet minim Amet minim Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam conamet.mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-            ),
-            const BlogPostBox(
-              title: 'Very Good',
-              date: '22 Jan 2023',
-              topicKeywords: 'Snowboard, Swimming',
-              description:
-                  'Amet minim Amet minim Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam conamet.mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-            ),
-            const BlogPostBox(
-              title: 'Very Good',
-              date: '22 Jan 2023',
-              topicKeywords: 'Snowboard, Swimming',
-              description:
-                  'Amet minim Amet minim Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam conamet.mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+            ...postList.map(
+              (post) => BlogPostBox(
+                  date: post.date,
+                  description: post.description,
+                  title: post.title,
+                  topicKeywords: post.topicKeywords),
             ),
             const SizedBox(
               height: 50,

@@ -12,12 +12,12 @@ class DashboardPage extends StatelessWidget with BaseMixin {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 4,
       child: Scaffold(
-        appBar: const CustomAppBar(),
-        endDrawer: const SimpleDrawer(),
-        body: TabBarView(children: const [
+        appBar: CustomAppBar(),
+        endDrawer: SimpleDrawer(),
+        body: TabBarView(children: [
           HomeView(),
           BlogView(),
           WorksView(),
