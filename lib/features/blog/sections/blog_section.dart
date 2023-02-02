@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/features/blog/models/blog_post.dart';
 import 'package:portfolio_app/features/blog/widgets/blog_post_box.dart';
 import 'package:portfolio_app/widgets/media/media_section.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/features/works/models/works_work.dart';
 import 'package:portfolio_app/widgets/media/media_section.dart';
 import 'package:portfolio_app/widgets/simple_work_box.dart';

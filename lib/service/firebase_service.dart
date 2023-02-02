@@ -8,4 +8,5 @@ class FirebaseService {
   CollectionReference heroRef = firebase.collection('hero');
   CollectionReference postsRef = firebase.collection('posts');
   CollectionReference worksRef = firebase.collection('works');
+  CollectionReference contactRef = firebase.collection('contact');
 }

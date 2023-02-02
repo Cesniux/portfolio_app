@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/features/blog/blog_view.dart';
 import 'package:portfolio_app/features/contact/contact_view.dart';
 import 'package:portfolio_app/features/home/home_view.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/features/blog/bloc/blog_bloc.dart';
 import 'package:portfolio_app/features/blog/bloc/blog_event.dart';
 import 'package:portfolio_app/features/blog/bloc/blog_state.dart';

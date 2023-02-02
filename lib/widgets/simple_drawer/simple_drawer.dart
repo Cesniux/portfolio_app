@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 import 'package:portfolio_app/widgets/simple_drawer/simple_drawer_desktop.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/base_mixin.dart';
 
 class HeroTitle extends StatelessWidget with BaseMixin {
   final double fontSize;

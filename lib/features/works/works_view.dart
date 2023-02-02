@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/features/works/bloc/works_bloc.dart';
 import 'package:portfolio_app/features/works/repositories/works_firebase_repository.dart';
 import 'package:portfolio_app/features/works/sections/works_section.dart';

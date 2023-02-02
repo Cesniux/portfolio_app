@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/base_extension.dart';
+import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/features/home/models/home_hero.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 
