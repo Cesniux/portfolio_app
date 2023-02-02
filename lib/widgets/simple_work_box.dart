@@ -69,7 +69,7 @@ class SimpleWorkBox extends StatelessWidget with BaseMixin {
                 Row(
                   children: [
                     Flexible(
-                      flex: (getMaxWidth(context) > 900) ? 2 : 3,
+                      flex: (getMaxWidth(context) > 900) ? 5 : 7,
                       child: WorkBoxImage(
                         imageUrl: imageUrl,
                       ),
@@ -78,7 +78,7 @@ class SimpleWorkBox extends StatelessWidget with BaseMixin {
                       width: 16,
                     ),
                     Flexible(
-                      flex: 5,
+                      flex: 10,
                       child: WorkBoxTextPart(
                           workTitle: workTitle,
                           year: year,
