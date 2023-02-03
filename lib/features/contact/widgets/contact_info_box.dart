@@ -16,8 +16,8 @@ class ContactInfoBox extends StatelessWidget with BaseMixin {
           'Contact',
           style: getTextTheme(context).titleMedium,
         ),
-        const SizedBox(
-          height: 70,
+        SizedBox(
+          height: 60.h,
         ),
         Text(
           'Domantas Čėsna',
