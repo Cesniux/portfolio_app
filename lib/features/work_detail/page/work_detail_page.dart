@@ -7,24 +7,7 @@ import 'package:portfolio_app/utils/screen_sizes.dart';
 import 'package:portfolio_app/widgets/media/media_section.dart';
 import 'package:portfolio_app/widgets/short_paragraph_text.dart';
 
-class WorkDetailView extends StatelessWidget with BaseMixin {
-  const WorkDetailView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constrains) {
-      final screenType = getScreenType(getMaxWidth(context));
-      switch (screenType) {
-        case ScreenType.mobile:
-          return const WorkDetailPage.mobile();
-        case ScreenType.tablet:
-          return const WorkDetailPage.tablet();
-        case ScreenType.desktop:
-          return const WorkDetailPage.desktop();
-      }
-    });
-  }
-}
 
 class WorkDetailPage extends StatelessWidget with BaseMixin {
   final double paddingHorizontal;
