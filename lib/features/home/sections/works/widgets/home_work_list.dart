@@ -21,7 +21,7 @@ class HomeWorkList extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            WorkDetailView(worksDetails: work)));
+                            WorkDetailView(workDetails: work)));
               },
               child: SimpleWorkBox(
                   workTitle: work.workTitle,

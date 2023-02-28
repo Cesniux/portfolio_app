@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/features/work_detail/page/work_detail_page.dart';
-import 'package:portfolio_app/features/works/models/works_work.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 
+////////////// works with Dynamic //////////////
+
 class WorkDetailView extends StatelessWidget with BaseMixin {
-  final dynamic worksDetails;
-  
-  const WorkDetailView({super.key, required this.worksDetails});
+  final dynamic workDetails;
+
+  const WorkDetailView({super.key, required this.workDetails});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +16,17 @@ class WorkDetailView extends StatelessWidget with BaseMixin {
       final screenType = getScreenType(getMaxWidth(context));
       switch (screenType) {
         case ScreenType.mobile:
-          return  WorkDetailPage.mobile(workDetails: worksDetails,);
+          return WorkDetailPage.mobile(
+            workDetails: workDetails,
+          );
         case ScreenType.tablet:
-          return  WorkDetailPage.tablet(workDetails: worksDetails,);
+          return WorkDetailPage.tablet(
+            workDetails: workDetails,
+          );
         case ScreenType.desktop:
-          return  WorkDetailPage.desktop(workDetails: worksDetails,);
+          return WorkDetailPage.desktop(
+            workDetails: workDetails,
+          );
       }
     });
   }

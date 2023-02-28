@@ -51,7 +51,7 @@ class WorksSection extends StatelessWidget with BaseMixin {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              WorkDetailView(worksDetails: work),
+                              WorkDetailView(workDetails: work),
                         ));
                   },
                   child: SimpleWorkBox(
