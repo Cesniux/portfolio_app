@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_app/features/home/repositories/home_dummy_repository.dart';
 import 'package:portfolio_app/features/work_detail/page/work_detail_page.dart';
+import 'package:portfolio_app/features/work_detail/work_detail_view.dart';
 import 'package:portfolio_app/service/firebase_service.dart';
 import 'package:portfolio_app/style/res/constants.dart';
 import 'package:portfolio_app/style/theme/text_theme.dart';
