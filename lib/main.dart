@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio_app/features/dashboard/dashboard_page.dart';
 import 'package:portfolio_app/features/home/repositories/home_dummy_repository.dart';
 import 'package:portfolio_app/features/work_detail/page/work_detail_page.dart';
 import 'package:portfolio_app/features/work_detail/work_detail_view.dart';
@@ -49,7 +50,7 @@ class App extends StatelessWidget {
                 primarySwatch: Colors.blue,
                 scaffoldBackgroundColor: CColor.white,
               ),
-              home: const WorkDetailView(),
+              home: const DashboardPage(),
             );
           }),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/base_mixin.dart';
+import 'package:portfolio_app/features/work_detail/work_detail_view.dart';
 import 'package:portfolio_app/features/works/models/works_work.dart';
 import 'package:portfolio_app/widgets/media/media_section.dart';
 import 'package:portfolio_app/widgets/simple_work_box.dart';
@@ -43,12 +44,23 @@ class WorksSection extends StatelessWidget with BaseMixin {
                 ),
               ),
             ),
-            ...worksList.map((work) => SimpleWorkBox(
-                  workTitle: work.workTitle,
-                  year: work.year,
-                  keyword: work.keyword,
-                  description: work.description,
-                  imageUrl: work.imageUrl,
+            ...worksList.map((work) => GestureDetector(
+              
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              WorkDetailView(worksDetails: work),
+                        ));
+                  },
+                  child: SimpleWorkBox(
+                    workTitle: work.workTitle,
+                    year: work.year,
+                    keyword: work.keyword,
+                    description: work.description,
+                    imageUrl: work.imageUrl,
+                  ),
                 )),
             const SizedBox(
               height: 50,

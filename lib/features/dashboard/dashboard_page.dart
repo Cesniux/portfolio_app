@@ -13,7 +13,7 @@ class DashboardPage extends StatelessWidget with BaseMixin {
   @override
   Widget build(BuildContext context) {
     return const DefaultTabController(
-      initialIndex: 3,
+      initialIndex: 2,
       length: 4,
       child: Scaffold(
         appBar: CustomAppBar(),

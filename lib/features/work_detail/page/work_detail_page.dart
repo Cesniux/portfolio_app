@@ -3,27 +3,36 @@ import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/features/work_detail/widgets/work_detail_appbar.dart';
 import 'package:portfolio_app/features/work_detail/widgets/work_detail_image.dart';
 import 'package:portfolio_app/features/work_detail/widgets/work_detail_year_tag.dart';
-import 'package:portfolio_app/utils/screen_sizes.dart';
+import 'package:portfolio_app/features/works/models/works_work.dart';
 import 'package:portfolio_app/widgets/media/media_section.dart';
 import 'package:portfolio_app/widgets/short_paragraph_text.dart';
 
-
-
 class WorkDetailPage extends StatelessWidget with BaseMixin {
+  final WorksWork workDetails;
   final double paddingHorizontal;
   final double paddingTop;
 
   const WorkDetailPage.mobile(
-      {super.key, this.paddingHorizontal = 18, this.paddingTop = 25});
+      {super.key,
+      this.paddingHorizontal = 18,
+      this.paddingTop = 25,
+      required this.workDetails});
   const WorkDetailPage.tablet(
-      {super.key, this.paddingHorizontal = 70, this.paddingTop = 60});
+      {super.key,
+      this.paddingHorizontal = 70,
+      this.paddingTop = 60,
+      required this.workDetails});
   const WorkDetailPage.desktop(
-      {super.key, this.paddingHorizontal = 235, this.paddingTop = 78});
+      {super.key,
+      this.paddingHorizontal = 300,
+      this.paddingTop = 78,
+      required this.workDetails});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PreferredSize(
+        
           preferredSize: Size.fromHeight(60), child: WorkDetailAppBar()),
       body: SingleChildScrollView(
         child: Padding(
@@ -36,7 +45,7 @@ class WorkDetailPage extends StatelessWidget with BaseMixin {
               SizedBox(
                 width: double.infinity,
                 child: Text(
-                  'Designing Dashboards with usability in mind',
+                  workDetails.workTitle,
                   style: getTextTheme(context).titleMedium,
                 ),
               ),
@@ -45,12 +54,12 @@ class WorkDetailPage extends StatelessWidget with BaseMixin {
               ),
               Row(
                 children: [
-                  const WorkDetailYearTag(year: '2099'),
+                  WorkDetailYearTag(year: workDetails.year),
                   const SizedBox(
                     width: 17,
                   ),
                   Expanded(
-                    child: Text('Dashboard, User Experience Design',
+                    child: Text(workDetails.keywordDetail,
                         style: getTextTheme(context).displayMedium),
                   )
                 ],
@@ -58,29 +67,22 @@ class WorkDetailPage extends StatelessWidget with BaseMixin {
               const SizedBox(
                 height: 30,
               ),
-              const ShortParagraphText(
-                  text:
-                      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'),
+              ShortParagraphText(text: workDetails.description),
               const SizedBox(
                 height: 50,
               ),
-              const WorkDetailImage(
-                imageUrl:
-                    'https://firebasestorage.googleapis.com/v0/b/portfolio-app-6c932.appspot.com/o/work_detail_image2.png?alt=media&token=10497339-0347-4aac-836d-30215db7f83f',
+              WorkDetailImage(
+                imageUrl: workDetails.imageUrlDetail1,
               ),
-              const ShortParagraphText(
-                  text:
-                      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'),
+              ShortParagraphText(text: workDetails.descriptionDetail),
               const SizedBox(
                 height: 27,
               ),
-              const WorkDetailImage(
-                imageUrl:
-                    'https://firebasestorage.googleapis.com/v0/b/portfolio-app-6c932.appspot.com/o/work_detail_image2.png?alt=media&token=10497339-0347-4aac-836d-30215db7f83f',
+              WorkDetailImage(
+                imageUrl: workDetails.imageUrl,
               ),
-              const WorkDetailImage(
-                imageUrl:
-                    'https://firebasestorage.googleapis.com/v0/b/portfolio-app-6c932.appspot.com/o/work_detail_image2.png?alt=media&token=10497339-0347-4aac-836d-30215db7f83f',
+              WorkDetailImage(
+                imageUrl: workDetails.imageUrlDetail2,
               ),
               const SizedBox(
                 height: 27,

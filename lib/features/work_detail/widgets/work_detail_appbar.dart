@@ -12,15 +12,17 @@ class WorkDetailAppBar extends StatelessWidget {
     return PreferredSize(
       preferredSize: const Size.fromHeight(60),
       child: AppBar(
+        leading: Container(),
         elevation: 0,
-        leadingWidth: 50.w,
         foregroundColor: CColor.blueTextcolor,
         backgroundColor: Colors.transparent,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+              },
               borderRadius: BorderRadius.circular(10),
               splashColor: CColor.textColor.withOpacity(0.4),
               highlightColor: CColor.textColor.withOpacity(0.4),

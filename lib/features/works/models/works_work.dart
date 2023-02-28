@@ -9,6 +9,7 @@ class WorksWork extends Equatable {
   final String descriptionDetail;
   final String imageUrlDetail1;
   final String imageUrlDetail2;
+  final String keywordDetail;
 
   const WorksWork({
     required this.description,
@@ -19,6 +20,7 @@ class WorksWork extends Equatable {
     required this.descriptionDetail,
     required this.imageUrlDetail1,
     required this.imageUrlDetail2,
+    required this.keywordDetail,
   });
 
   WorksWork.fromJson(Map<String, dynamic> json)
@@ -29,7 +31,8 @@ class WorksWork extends Equatable {
         year = json['year'],
         descriptionDetail = json['descriptionDetail'],
         imageUrlDetail1 = json['imageUrlDetail1'],
-        imageUrlDetail2 = json['imageUrlDetail2'];
+        imageUrlDetail2 = json['imageUrlDetail2'],
+        keywordDetail = json['keywordDetail'];
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
@@ -41,6 +44,7 @@ class WorksWork extends Equatable {
     data['descriptionDetail'] = descriptionDetail;
     data['imageUrlDetail1'] = imageUrlDetail1;
     data['imageUrlDetail2'] = imageUrlDetail2;
+    data['keywordDetail'] = keywordDetail;
     return data;
   }
 
@@ -53,6 +57,7 @@ class WorksWork extends Equatable {
     String? descriptionDetail,
     String? imageUrlDetail1,
     String? imageUrlDetail2,
+    String? keywordDetail,
   }) {
     return WorksWork(
         description: description ?? this.description,
@@ -62,12 +67,13 @@ class WorksWork extends Equatable {
         year: year ?? this.year,
         descriptionDetail: descriptionDetail ?? this.descriptionDetail,
         imageUrlDetail1: imageUrlDetail1 ?? this.imageUrlDetail1,
-        imageUrlDetail2: imageUrlDetail2 ?? this.imageUrlDetail2);
+        imageUrlDetail2: imageUrlDetail2 ?? this.imageUrlDetail2,
+        keywordDetail: keywordDetail ?? this.keywordDetail);
   }
 
   @override
   String toString() {
-    return 'WorksWork: description - $description, imageUrl - $imageUrl, keyword - $keyword, workTitle - $workTitle, year - $year, descriptionDetail - $descriptionDetail, imageUrlDetail1 - $imageUrlDetail1,imageUrlDetail2 - $imageUrlDetail2';
+    return 'WorksWork: description - $description, imageUrl - $imageUrl, keyword - $keyword, workTitle - $workTitle, year - $year, descriptionDetail - $descriptionDetail, imageUrlDetail1 - $imageUrlDetail1,imageUrlDetail2 - $imageUrlDetail2, keywordDetail - $keywordDetail';
   }
 
   @override
@@ -79,6 +85,7 @@ class WorksWork extends Equatable {
         year,
         descriptionDetail,
         imageUrlDetail1,
-        imageUrlDetail2
+        imageUrlDetail2,
+        keywordDetail,
       ];
 }
