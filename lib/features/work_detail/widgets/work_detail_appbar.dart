@@ -12,7 +12,7 @@ class WorkDetailAppBar extends StatelessWidget {
     return PreferredSize(
       preferredSize: const Size.fromHeight(60),
       child: AppBar(
-        leading: Container(),
+        automaticallyImplyLeading: false,
         elevation: 0,
         foregroundColor: CColor.blueTextcolor,
         backgroundColor: Colors.transparent,

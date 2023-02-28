@@ -66,31 +66,34 @@ class SimpleWorkBox extends StatelessWidget with BaseMixin {
           case ScreenType.desktop:
             return Column(
               children: [
-                Row(
-                  children: [
-                    Flexible(
-                      flex: (getMaxWidth(context) > 900) ? 5 : 7,
-                      child: WorkBoxImage(
-                        imageUrl: imageUrl,
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: Row(
+                    children: [
+                      Flexible(
+                        flex: (getMaxWidth(context) > 900) ? 5 : 7,
+                        child: WorkBoxImage(
+                          imageUrl: imageUrl,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 16,
-                    ),
-                    Flexible(
-                      flex: 10,
-                      child: WorkBoxTextPart(
-                          workTitle: workTitle,
-                          year: year,
-                          keyword: keyword,
-                          description: description),
-                    ),
-                    Divider(
-                      color: CColor.dividerGreycolor,
-                      height: 34,
-                      thickness: 1.5,
-                    )
-                  ],
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Flexible(
+                        flex: 10,
+                        child: WorkBoxTextPart(
+                            workTitle: workTitle,
+                            year: year,
+                            keyword: keyword,
+                            description: description),
+                      ),
+                      Divider(
+                        color: CColor.dividerGreycolor,
+                        height: 34,
+                        thickness: 1.5,
+                      )
+                    ],
+                  ),
                 ),
                 Divider(
                   color: CColor.dividerGreycolor,

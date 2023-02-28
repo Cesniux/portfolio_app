@@ -5,7 +5,8 @@ import 'package:portfolio_app/features/works/models/works_work.dart';
 import 'package:portfolio_app/utils/screen_sizes.dart';
 
 class WorkDetailView extends StatelessWidget with BaseMixin {
-  final WorksWork worksDetails;
+  final dynamic worksDetails;
+  
   const WorkDetailView({super.key, required this.worksDetails});
 
   @override

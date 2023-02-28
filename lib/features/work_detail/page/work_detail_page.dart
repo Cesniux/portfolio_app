@@ -8,7 +8,7 @@ import 'package:portfolio_app/widgets/media/media_section.dart';
 import 'package:portfolio_app/widgets/short_paragraph_text.dart';
 
 class WorkDetailPage extends StatelessWidget with BaseMixin {
-  final WorksWork workDetails;
+  final dynamic workDetails;
   final double paddingHorizontal;
   final double paddingTop;
 
