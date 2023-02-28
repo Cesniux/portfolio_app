@@ -3,11 +3,39 @@ import 'package:portfolio_app/base_mixin.dart';
 import 'package:portfolio_app/features/work_detail/widgets/work_detail_appbar.dart';
 import 'package:portfolio_app/features/work_detail/widgets/work_detail_image.dart';
 import 'package:portfolio_app/features/work_detail/widgets/work_detail_year_tag.dart';
+import 'package:portfolio_app/utils/screen_sizes.dart';
 import 'package:portfolio_app/widgets/media/media_section.dart';
 import 'package:portfolio_app/widgets/short_paragraph_text.dart';
 
+class WorkDetailView extends StatelessWidget with BaseMixin {
+  const WorkDetailView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, constrains) {
+      final screenType = getScreenType(getMaxWidth(context));
+      switch (screenType) {
+        case ScreenType.mobile:
+          return const WorkDetailPage.mobile();
+        case ScreenType.tablet:
+          return const WorkDetailPage.tablet();
+        case ScreenType.desktop:
+          return const WorkDetailPage.desktop();
+      }
+    });
+  }
+}
+
 class WorkDetailPage extends StatelessWidget with BaseMixin {
-  const WorkDetailPage({super.key});
+  final double paddingHorizontal;
+  final double paddingTop;
+
+  const WorkDetailPage.mobile(
+      {super.key, this.paddingHorizontal = 18, this.paddingTop = 25});
+  const WorkDetailPage.tablet(
+      {super.key, this.paddingHorizontal = 70, this.paddingTop = 60});
+  const WorkDetailPage.desktop(
+      {super.key, this.paddingHorizontal = 235, this.paddingTop = 78});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +44,10 @@ class WorkDetailPage extends StatelessWidget with BaseMixin {
           preferredSize: Size.fromHeight(60), child: WorkDetailAppBar()),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 235, right: 235, top: 78),
+          padding: EdgeInsets.only(
+              left: paddingHorizontal,
+              right: paddingHorizontal,
+              top: paddingTop),
           child: Column(
             children: [
               SizedBox(

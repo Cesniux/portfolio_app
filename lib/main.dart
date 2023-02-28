@@ -48,7 +48,7 @@ class App extends StatelessWidget {
                 primarySwatch: Colors.blue,
                 scaffoldBackgroundColor: CColor.white,
               ),
-              home: const WorkDetailPage(),
+              home: const WorkDetailView(),
             );
           }),
     );
